@@ -35,7 +35,11 @@ Após aceitar o convite, para adicionar suas informações na página `group_mem
 -->
 ```
 3.2 Copie-o e cole logo abaixo da marcação `-->`
+
 3.3 Remova as marcações do código copiado `<!--` e `-->`
+
 3.4 Substitua `Seu nome aqui` pelo seu nome, troque `<Computer Engineering>` pelo seu curso, e, opcionalmente, insira o link da sua página, github, linkedin ou o que preferir;
+
 3.5 Faça o commit em uma nova branch (pelo navegador, selecione "Create a new branch for this commit and start a pull request" informando um nome para sua branch nova) ou pelo terminal: `git add group_members.html`, `git commit -m "Add Info.`, `git push` [explicação aqui](https://blog.betrybe.com/git/git-push/)
+
 3.6 Verifique suas alterações no repositório (navegador) e finalize o [pull request](https://docs.github.com/pt/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
