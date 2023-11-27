@@ -32,7 +32,6 @@ Após aceitar o convite, para adicionar suas informações na página `group_mem
             </div>
           </div>
         </div>
-      </div>
 -->
 ```
 4.2 Copie-o e cole logo abaixo da marcação `-->`
@@ -43,6 +42,6 @@ Após aceitar o convite, para adicionar suas informações na página `group_mem
 
 4.5 Substitua  SUAFOTOAQUI em `<img src="images/team-fotos/SUAFOTOAQUI.jpg" alt="">` pelo nome do arquivo referente à sua foto. 
 
-4.6 Faça o commit em uma nova branch (pelo navegador, selecione "Create a new branch for this commit and start a pull request" informando um nome para sua branch nova) ou pelo terminal: `git add group_members.html`, opcionalmente: `git add images/team-fotos/SUAFOTO...`, `git commit -m "Add Info.`, `git push` [explicação aqui](https://blog.betrybe.com/git/git-push/)
+4.6 Faça o commit em uma nova branch (pelo navegador, selecione "Create a new branch for this commit and start a pull request" informando um nome para sua branch nova) ou pelo terminal: `git add group_members.html`, opcionalmente: `git add images/team-fotos/SUAFOTO...`, `git commit -m "Add Info.`, `git push` [explicação aqui](https://blog.betrybe.com/git/git-push/).
 
 4.7 Verifique suas alterações no repositório **remoto** (por exemplo, pelo navegador): se o conteúdo do arquivo consta as suas informações (`group_members.html`) e se inseriu a foto no repositório. Então, finalize o [pull request](https://docs.github.com/pt/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) e bem-vindo ao time!  
