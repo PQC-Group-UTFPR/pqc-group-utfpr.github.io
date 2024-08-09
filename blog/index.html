@@ -140,14 +140,288 @@
                     Content here!
                 </p>
             </article>
+	   <br><br><hr style="height: 3px; border: none;  border-radius: 6px;background: linear-gradient(90deg, rgba(13, 8, 96, 1) 0%, rgba(9, 9, 121, 1) 21%, rgba(128, 128, 0, 1) 51%, rgba(255, 255, 0, 1) 100% ); " ><br><br>
 
 	    -->
+
+            <article id="2024-hybrid-in-java-part-1">
+                <h2><b>Hybrid PQC in Java: Common Pitfalls (Part 1)</b></h2>
+                <p class="post-meta">
+                    Published on August 9, 2024 by Alexandre Giron
+                </p>
+		<figure>
+			<img src="imgs/pitfalls-crypto.png" alt="OpenArt AI-Generated \"Pitfalls and holes in Cryptography using a dark theme\", except for the java icon" style="border-radius: 15px; display: block;  margin-left: auto;  margin-right: auto;  width: 90%;">
+			  <figcaption>OpenArt AI-Generated "Pitfalls and holes in Cryptography using a dark theme", except for the <a href="https://www.flaticon.com/free-icons/java">java icon</a> (Freepik - Flaticon).</figcaption>
+		</figure>
+		<br>
+		<!--		<a href="https://www.flaticon.com/free-icons/java" title="java icons">Java icons created by Freepik - Flaticon</a>-->
+
+                <p>
+                    As part of a collaboration project with <b><a href="https://www.czertainly.com/">CZERTAINLY</a></b>, I've started a Java 
+		    <a  href="https://github.com/PQC-Group-UTFPR/hybrid-pqc-bc">repository</a> to experiment hybrid PQC. 
+		    Together with <a href="https://www.linkedin.com/in/andrei-filipim-esteves-373667322/">Andrei</a> and <a href="https://www.linkedin.com/in/danrlei-huber/">Danrlei</a> 
+		    (some of our hero's undergrad students!), we developed some examples of hybrid PQC using Bouncy Castle (1.77).
+		    <br><br>
+		    In this post, I'll explain some possible problems you might encounter, in particular if you are planning a transition to PQC with java, such as:
+		    <ul>
+                        <li>Design Architecture: how can I add hybrids in my Java application?</li>
+                        <li>Performance: it can get <em style="color: red;">3-12x worse!</em> (comparing PQ-only vs Hybrid, depending on some choices)</li>
+                    </ul>
+		    Let's start on how to develop a Hybrid KEM in Java using Bouncy Castle.
+                </p>
+
+		<h4> Design alternatives</h4><br>
+			<p>
+			Recently, KeyFactor announced <a href="https://www.keyfactor.com/press-releases/keyfactor-announces-nist-fips-140-3-certification-for-bouncy-castle/"> FIPS 140-3 compliance</a> for Bouncy Castle, which includes post-quantum algorithms. Looking at their docs, one can plan
+			a migration as follows (considering KEMs): <br>
+			<ul>
+                        	<li>Certified version of Bouncy Castle (docs <a href="https://doc.primekey.com/bouncycastle/post-quantum-hybrid-cryptography-in-bouncy-castle/use-the-post-quantum-kems-in-fips-certified-bouncy-castle">here</a>).</li>
+                        	<li>Or use non-FIPS KEMs (docs <a href="https://doc.primekey.com/bouncycastle/post-quantum-hybrid-cryptography-in-bouncy-castle/use-the-post-quantum-kems-in-non-fips-bouncy-castle">here</a>).</li>
+                    	</ul>			
+			Regardless of the version, the recommended approach is to use a traditional algorithm (such as ECDH) with a PQC one (e.g., Kyber) as follows:
+			<br><br>
+			<ul>
+                                <li>Key Agreement (older systems): using "UserKeyingMaterialSpec" class to supply the PQC KEM secret or "DEROtherInfoClass". </li>
+                                <li>Key Agreement (newer systems):"HybridValueParameterSpec", which uses a Two-step KDF (NIST.SP.800-56C). </li>
+                                <li>Key Transport: "PQCSecretKeyProcessor". Documentation states that it combines traditional and PQC shared secrets using a XOR function. </li>
+                        </ul> 
+ 			Ok, all of this are in the docs, but if we look from an implementation perspective, there is much more to deal with. 
+			Theoretically, the migration can be represented as a flow in which we start from traditional cryptography towards PQC:
+			</p>
+			<figure>
+          	              <img src="imgs/transition-flow.png" alt="PQC Transition flow" style="border-radius: 15px; display: block;  margin-left: auto;  margin-right: auto;  width: 90%;">
+	                </figure>
+			<p>
+			We could generalize each step as a different approach to the same end, which is, a way to secure our data. 
+			With <a href="https://en.wikipedia.org/wiki/Cryptographic_agility">crypto agility</a> in mind, a flexible but easy-to-switch API is desirable. In this case, the migration should not be hard to code.
+			Consider the array sorting as a quick example. The sorting strategy (quick-sort, merge-sort, etc.) is something that a computer-science student would like to switch in order to compare performance.
+			<br><br>
+			So, how can I code such a easy-to-switch API?
+			Well, there are some alternatives and in our repository we choose a pattern: <a href="https://en.wikipedia.org/wiki/Strategy_pattern"> Strategy</a>. 
+			<br><br>
+			I know, there are cons to that, but if we want to do something like <em>traditional -> hybrid -> PQ-only </em> 
+			it means that there are three strategies to deal with. 
+			It's not that simple but this is the general idea that we select for our implementation.
+			<br><br>
+			One caveat to the Strategy pattern is that if your application is not using it maybe the refactor efforts may slow down your migration.
+			Since hybrids can be used for a while (years, decades, forever? What if it is not Java anymore? Who knows...), maybe a pattern would not be necessary.
+			<br><br>
+			Anyway, our Strategy instance contains a KEM class, and a HybridKEM class, coded in a way that you can switch between them very easily, like this:
+			</p>
+			<figure>
+          	              <img src="imgs/hybrid-example-code.png" alt="Instantiating a PQC KEM or a HybridKEM" style="border-radius: 15px; display: block;  margin-left: auto;  margin-right: auto;  width: 90%;">
+                        </figure>			
+			<p>
+			Such a design also helps to minimize the number of required configurations (we can establish defaults after the benchmarks). 
+			<br><br>
+			There is also a security concern that hybrid keys should not be used outside the "hybrid context" (to avoid downgrade attacks).
+			This concern is more critical when talking about hybrid signatures (please refer to this <a href="https://youtu.be/8PYYM3G7_GY?t=2654"> talk</a>).
+			Our design is aligned to this idea, because the operations are performed inside the hybrid class, but obviously we are dependent on the interfaces that Bouncy Castle gives and how the methods are actually used. 
+			<br><br>
+			After some initial benchmarks, we saw a performance bootleneck and that lead us to a second HybridKEM class: HybridKEMxECDH (which does not fit well in the strategy concept but we left "as-is" just for reference, or for an easy copy-and-paste example).  
+			
+			Now let's see some results.
+
+			</p>
+		<br>
+
+		<h4> Performance</h4><br>
+                <p>
+			We selected Kyber as PQC algorithm and NIST P-curves to do the benchmark. 
+			Our setup was configured without Turbo Boost (from <a href="https://bench.cr.yp.to/supercop.html"> here</a>) and 
+			disabling other unnecessary services in a Linux system. 
+			Flag <em>-n </em> is used to generate a million iterations. The table below shows the result (considering 1M KeyGens, 1M Encaps, 1M Decaps):
+                </p>
+		<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-bghy{border-color:inherit;font-family:Arial, Helvetica, sans-serif !important;font-weight:bold;position:-webkit-sticky;
+  position:sticky;text-align:left;top:-1px;vertical-align:top;will-change:transform}
+.tg .tg-dncm{border-color:inherit;font-weight:bold;position:-webkit-sticky;position:sticky;text-align:left;top:-1px;
+  vertical-align:top;will-change:transform}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-dvpl{border-color:inherit;text-align:right;vertical-align:top}
+.tg-sort-header::-moz-selection{background:0 0}
+.tg-sort-header::selection{background:0 0}.tg-sort-header{cursor:pointer}
+.tg-sort-header:after{content:'';float:right;margin-top:7px;border-width:0 5px 5px;border-style:solid;
+  border-color:#404040 transparent;visibility:hidden}
+.tg-sort-header:hover:after{visibility:visible}
+.tg-sort-asc:after,.tg-sort-asc:hover:after,.tg-sort-desc:after{visibility:visible;opacity:.4}
+.tg-sort-desc:after{border-bottom:none;border-width:5px 5px 0}@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;}}</style>
+<div class="tg-wrap"><table id="tg-t6rGS" class="tg"><thead>
+  <tr>
+    <th class="tg-bghy">Parameter Set</th>
+    <th class="tg-dncm">Keygen/s<br>(PQ-only)</th>
+    <th class="tg-dncm">Keygen/s<br>(hybrid)</th>
+    <th class="tg-dncm">Hybrid<br>Penalty</th>
+    <th class="tg-dncm">Encaps/s<br>(PQ-only)</th>
+    <th class="tg-dncm">Encaps/s<br>(hybrid)</th>
+    <th class="tg-dncm">Hybrid<br>Penalty</th>
+    <th class="tg-dncm">Decaps/s<br>(PQ-only)</th>
+    <th class="tg-dncm">Decaps/s<br>(hybrid)</th>
+    <th class="tg-dncm">Hybrid<br>Penalty</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">Kyber 512</td>
+    <td class="tg-dvpl">12777.75</td>
+    <td class="tg-dvpl">4008.30</td>
+    <td class="tg-dvpl">3.18x</td>
+    <td class="tg-dvpl">12107.27</td>
+    <td class="tg-dvpl">2394.96</td>
+    <td class="tg-dvpl">5.05x</td>
+    <td class="tg-dvpl">9730.27</td>
+    <td class="tg-dvpl">2315.45</td>
+    <td class="tg-dvpl">4.20x</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Kyber 768</td>
+    <td class="tg-dvpl">7895.65</td>
+    <td class="tg-dvpl">1643.80</td>
+    <td class="tg-dvpl">4.8x</td>
+    <td class="tg-dvpl">8092.77</td>
+    <td class="tg-dvpl">810.05</td>
+    <td class="tg-dvpl">9.99x</td>
+    <td class="tg-dvpl">6686.68</td>
+    <td class="tg-dvpl">786.28</td>
+    <td class="tg-dvpl">8.5x</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Kyber 1024</td>
+    <td class="tg-dvpl">5150.84</td>
+    <td class="tg-dvpl">828.53</td>
+    <td class="tg-dvpl">6.21x</td>
+    <td class="tg-dvpl">5567.58</td>
+    <td class="tg-dvpl">379.02</td>
+    <td class="tg-dvpl">14.68x</td>
+    <td class="tg-dvpl">4717.69</td>
+    <td class="tg-dvpl">374.40</td>
+    <td class="tg-dvpl">12.6x</td>
+  </tr>
+</tbody></table></div>
+<script charset="utf-8">var TGSort=window.TGSort||function(n){"use strict";function r(n){return n?n.length:0}function t(n,t,e,o=0){for(e=r(n);o<e;++o)t(n[o],o)}function e(n){return n.split("").reverse().join("")}function o(n){var e=n[0];return t(n,function(n){for(;!n.startsWith(e);)e=e.substring(0,r(e)-1)}),r(e)}function u(n,r,e=[]){return t(n,function(n){r(n)&&e.push(n)}),e}var a=parseFloat;function i(n,r){return function(t){var e="";return t.replace(n,function(n,t,o){return e=t.replace(r,"")+"."+(o||"").substring(1)}),a(e)}}var s=i(/^(?:\s*)([+-]?(?:\d+)(?:,\d{3})*)(\.\d*)?$/g,/,/g),c=i(/^(?:\s*)([+-]?(?:\d+)(?:\.\d{3})*)(,\d*)?$/g,/\./g);function f(n){var t=a(n);return!isNaN(t)&&r(""+t)+1>=r(n)?t:NaN}function d(n){var e=[],o=n;return t([f,s,c],function(u){var a=[],i=[];t(n,function(n,r){r=u(n),a.push(r),r||i.push(n)}),r(i)<r(o)&&(o=i,e=a)}),r(u(o,function(n){return n==o[0]}))==r(o)?e:[]}function v(n){if("TABLE"==n.nodeName){for(var a=function(r){var e,o,u=[],a=[];return function n(r,e){e(r),t(r.childNodes,function(r){n(r,e)})}(n,function(n){"TR"==(o=n.nodeName)?(e=[],u.push(e),a.push(n)):"TD"!=o&&"TH"!=o||e.push(n)}),[u,a]}(),i=a[0],s=a[1],c=r(i),f=c>1&&r(i[0])<r(i[1])?1:0,v=f+1,p=i[f],h=r(p),l=[],g=[],N=[],m=v;m<c;++m){for(var T=0;T<h;++T){r(g)<h&&g.push([]);var C=i[m][T],L=C.textContent||C.innerText||"";g[T].push(L.trim())}N.push(m-v)}t(p,function(n,t){l[t]=0;var a=n.classList;a.add("tg-sort-header"),n.addEventListener("click",function(){var n=l[t];!function(){for(var n=0;n<h;++n){var r=p[n].classList;r.remove("tg-sort-asc"),r.remove("tg-sort-desc"),l[n]=0}}(),(n=1==n?-1:+!n)&&a.add(n>0?"tg-sort-asc":"tg-sort-desc"),l[t]=n;var i,f=g[t],m=function(r,t){return n*f[r].localeCompare(f[t])||n*(r-t)},T=function(n){var t=d(n);if(!r(t)){var u=o(n),a=o(n.map(e));t=d(n.map(function(n){return n.substring(u,r(n)-a)}))}return t}(f);(r(T)||r(T=r(u(i=f.map(Date.parse),isNaN))?[]:i))&&(m=function(r,t){var e=T[r],o=T[t],u=isNaN(e),a=isNaN(o);return u&&a?0:u?-n:a?n:e>o?n:e<o?-n:n*(r-t)});var C,L=N.slice();L.sort(m);for(var E=v;E<c;++E)(C=s[E].parentNode).removeChild(s[E]);for(E=v;E<c;++E)C.appendChild(s[v+L[E-v]])})})}}n.addEventListener("DOMContentLoaded",function(){for(var t=n.getElementsByClassName("tg"),e=0;e<r(t);++e)try{v(t[e])}catch(n){}})}(document)</script>
+		<p>
+		<br>
+		By hybrid penalty I mean the slowdown when comparing PQ-only vs hybrid. The above table shows penalties from <b> 3.18x to 12.6x</b>. Ouch! 
+		<br><br>
+		Literature shows that hybrid modes do not harm performance when considering algorithms at security level 1 (e.g., Kyber512), and reported some penalties when increasing security levels. Some examples
+		<a href="https://link.springer.com/chapter/10.1007/978-3-030-44223-1_5">here</a> and 
+		<a href="https://dl.acm.org/doi/abs/10.1145/3386367.3431305">here</a>. However, our results are much worse from what I would expect for the hybrid mode. So what's wrong? 
+		<br><br>
+		First I thought that something was wrong with the implementation, but after a quick profiling I saw this:
+		<figure>
+      	              <img src="imgs/profilingHybridKEM.png" alt="Profiling Kyber key generation (PQ-only and Hybrid)" style="border-radius: 15px; display: block;  margin-left: auto;  margin-right: auto;  width: 100%;">
+		</figure>  
+		<p>
+		AbstractECMultiplier class seems to be the bootleneck (comparing Key Generation).
+		I could not simply fix it by changing software providers (SunEC provider was  slower!). So if that performance is unacceptable,
+		then we should change our hybrid ECC component. By changing it to x25519 and X448 (curves described in RFC 7748), the hybrid penalties were reduced significantly.
+		See below:
+		</p>
+		<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-bghy{border-color:inherit;font-family:Arial, Helvetica, sans-serif !important;font-weight:bold;position:-webkit-sticky;
+  position:sticky;text-align:left;top:-1px;vertical-align:top;will-change:transform}
+.tg .tg-dncm{border-color:inherit;font-weight:bold;position:-webkit-sticky;position:sticky;text-align:left;top:-1px;
+  vertical-align:top;will-change:transform}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-dvpl{border-color:inherit;text-align:right;vertical-align:top}
+.tg-sort-header::-moz-selection{background:0 0}
+.tg-sort-header::selection{background:0 0}.tg-sort-header{cursor:pointer}
+.tg-sort-header:after{content:'';float:right;margin-top:7px;border-width:0 5px 5px;border-style:solid;
+  border-color:#404040 transparent;visibility:hidden}
+.tg-sort-header:hover:after{visibility:visible}
+.tg-sort-asc:after,.tg-sort-asc:hover:after,.tg-sort-desc:after{visibility:visible;opacity:.4}
+.tg-sort-desc:after{border-bottom:none;border-width:5px 5px 0}@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;}}</style>
+<div class="tg-wrap"><table id="tg-wL4Wi" class="tg"><thead>
+  <tr>
+    <th class="tg-bghy">Parameter Set</th>
+    <th class="tg-dncm">Keygen/s<br>(PQ-only)</th>
+    <th class="tg-dncm">Keygen/s<br>(hybrid)</th>
+    <th class="tg-dncm">Hybrid<br>Penalty</th>
+    <th class="tg-dncm">Encaps/s<br>(PQ-only)</th>
+    <th class="tg-dncm">Encaps/s<br>(hybrid)</th>
+    <th class="tg-dncm">Hybrid<br>Penalty</th>
+    <th class="tg-dncm">Decaps/s<br>(PQ-only)</th>
+    <th class="tg-dncm">Decaps/s<br>(hybrid)</th>
+    <th class="tg-dncm">Hybrid<br>Penalty</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">Kyber 512</td>
+    <td class="tg-dvpl">12839.11</td>
+    <td class="tg-dvpl">4943.30</td>
+    <td class="tg-dvpl">2.59x</td>
+    <td class="tg-dvpl">12199.58</td>
+    <td class="tg-dvpl">4028.76</td>
+    <td class="tg-dvpl">3.02</td>
+    <td class="tg-dvpl">9701.29</td>
+    <td class="tg-dvpl">3771.96</td>
+    <td class="tg-dvpl">2.57x</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Kyber 768</td>
+    <td class="tg-dvpl">7982.05</td>
+    <td class="tg-dvpl">3973.29</td>
+    <td class="tg-dvpl">2.0x</td>
+    <td class="tg-dvpl">8102.80</td>
+    <td class="tg-dvpl">3473.01</td>
+    <td class="tg-dvpl">2.33x</td>
+    <td class="tg-dvpl">6770.70</td>
+    <td class="tg-dvpl">3193.44</td>
+    <td class="tg-dvpl">2.12x</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Kyber 1024</td>
+    <td class="tg-dvpl">5188.92</td>
+    <td class="tg-dvpl">1465.73</td>
+    <td class="tg-dvpl">3.54x</td>
+    <td class="tg-dvpl">5550.62</td>
+    <td class="tg-dvpl">1245.92</td>
+    <td class="tg-dvpl">4.45x</td>
+    <td class="tg-dvpl">4715.06</td>
+    <td class="tg-dvpl">1198.32</td>
+    <td class="tg-dvpl">3.93x</td>
+  </tr>
+</tbody></table></div>
+<script charset="utf-8">var TGSort=window.TGSort||function(n){"use strict";function r(n){return n?n.length:0}function t(n,t,e,o=0){for(e=r(n);o<e;++o)t(n[o],o)}function e(n){return n.split("").reverse().join("")}function o(n){var e=n[0];return t(n,function(n){for(;!n.startsWith(e);)e=e.substring(0,r(e)-1)}),r(e)}function u(n,r,e=[]){return t(n,function(n){r(n)&&e.push(n)}),e}var a=parseFloat;function i(n,r){return function(t){var e="";return t.replace(n,function(n,t,o){return e=t.replace(r,"")+"."+(o||"").substring(1)}),a(e)}}var s=i(/^(?:\s*)([+-]?(?:\d+)(?:,\d{3})*)(\.\d*)?$/g,/,/g),c=i(/^(?:\s*)([+-]?(?:\d+)(?:\.\d{3})*)(,\d*)?$/g,/\./g);function f(n){var t=a(n);return!isNaN(t)&&r(""+t)+1>=r(n)?t:NaN}function d(n){var e=[],o=n;return t([f,s,c],function(u){var a=[],i=[];t(n,function(n,r){r=u(n),a.push(r),r||i.push(n)}),r(i)<r(o)&&(o=i,e=a)}),r(u(o,function(n){return n==o[0]}))==r(o)?e:[]}function v(n){if("TABLE"==n.nodeName){for(var a=function(r){var e,o,u=[],a=[];return function n(r,e){e(r),t(r.childNodes,function(r){n(r,e)})}(n,function(n){"TR"==(o=n.nodeName)?(e=[],u.push(e),a.push(n)):"TD"!=o&&"TH"!=o||e.push(n)}),[u,a]}(),i=a[0],s=a[1],c=r(i),f=c>1&&r(i[0])<r(i[1])?1:0,v=f+1,p=i[f],h=r(p),l=[],g=[],N=[],m=v;m<c;++m){for(var T=0;T<h;++T){r(g)<h&&g.push([]);var C=i[m][T],L=C.textContent||C.innerText||"";g[T].push(L.trim())}N.push(m-v)}t(p,function(n,t){l[t]=0;var a=n.classList;a.add("tg-sort-header"),n.addEventListener("click",function(){var n=l[t];!function(){for(var n=0;n<h;++n){var r=p[n].classList;r.remove("tg-sort-asc"),r.remove("tg-sort-desc"),l[n]=0}}(),(n=1==n?-1:+!n)&&a.add(n>0?"tg-sort-asc":"tg-sort-desc"),l[t]=n;var i,f=g[t],m=function(r,t){return n*f[r].localeCompare(f[t])||n*(r-t)},T=function(n){var t=d(n);if(!r(t)){var u=o(n),a=o(n.map(e));t=d(n.map(function(n){return n.substring(u,r(n)-a)}))}return t}(f);(r(T)||r(T=r(u(i=f.map(Date.parse),isNaN))?[]:i))&&(m=function(r,t){var e=T[r],o=T[t],u=isNaN(e),a=isNaN(o);return u&&a?0:u?-n:a?n:e>o?n:e<o?-n:n*(r-t)});var C,L=N.slice();L.sort(m);for(var E=v;E<c;++E)(C=s[E].parentNode).removeChild(s[E]);for(E=v;E<c;++E)C.appendChild(s[v+L[E-v]])})})}}n.addEventListener("DOMContentLoaded",function(){for(var t=n.getElementsByClassName("tg"),e=0;e<r(t);++e)try{v(t[e])}catch(n){}})}(document)</script>
+		
+		<br>
+		
+ 		<p>
+		As expected, such a change improved performance for the hybrid mode. One can also use the <a href="https://github.com/bcgit/bc-java/blob/main/core/src/test/java/org/bouncycastle/math/ec/rfc7748/test/X25519Test.java">x25519 interface</a> directly, 
+		perhaps the performance could be further improved that way. 
+		Therefore, x25519 is a better choice for the hybrid.
+		<br><br>
+		Some details are missing, such as the KDF functions that we use. Also, we map x25519 with Kyber512 <em> and </em> Kyber768. It seems that Kyber768 will be used as default (examples
+		<a href="https://eprint.iacr.org/2024/039"> here</a> and
+		<a href="https://datatracker.ietf.org/doc/draft-tls-westerbaan-xyber768d00/"> here</a>).
+
+		<br><br>
+		In conclusion, there are some pitfalls in the choices for the algorithms and the design architecture when you migrate your java application.
+		Hopefully this post might help you avoid some of them. For the next post, we'll see some performance results when using hybrid signatures. Thanks! 
+		</p>
+		
+            </article>
+	    
+	   <br><br><hr style="height: 3px; border: none;  border-radius: 6px;background: linear-gradient(90deg, rgba(13, 8, 96, 1) 0%, rgba(9, 9, 121, 1) 21%, rgba(128, 128, 0, 1) 51%, rgba(255, 255, 0, 1) 100% ); " ><br><br>
+
+            
+
+
 
   
             <article id="2024-first-post"> 
                 <h2>Group's First Anniversary</h2> 
                 <p class="post-meta"> 
-                    Published on July 30, 2024 by Alexandre Giron 
+                    Written on July 30, 2024 by Alexandre Giron 
                 </p> 
                 <p> 
 		    The <i>"Grupo de Pesquisa Criptografia Pós-Quântica - UTFPR"</i> was created in March, 2023. 
@@ -168,9 +442,14 @@
 		    Obviously we are still at our "baby steps" stage. But we hope to contribute and we welcome new collaborations!
                 </p> 
             </article> 
+	   <br><br><hr style="height: 3px; border: none;  border-radius: 6px;background: linear-gradient(90deg, rgba(13, 8, 96, 1) 0%, rgba(9, 9, 121, 1) 21%, rgba(128, 128, 0, 1) 51%, rgba(255, 255, 0, 1) 100% ); " ><br><br>
 
         </main> 
   	</div>
+
+
+
+
 
  <div class="col-sm-12 col-md-4 ">
         <aside> 
@@ -178,6 +457,7 @@
             <ul> 
 <!--		Copy using the most-recent fashion
                 <li><a href="#date-here">Title</a></li> -->
+                <li><a href="#2024-hybrid-in-java-part-1">Hybrid PQC in Java: Common Pitfalls (Part 1) </a></li> 
                 <li><a href="#2024-first-post">Group's First Anniversary</a></li> 
             </ul> 
         </aside> 
