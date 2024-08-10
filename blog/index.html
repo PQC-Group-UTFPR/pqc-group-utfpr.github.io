@@ -147,7 +147,7 @@
             <article id="2024-hybrid-in-java-part-1">
                 <h2><b>Hybrid PQC in Java: Common Pitfalls (Part 1)</b></h2>
                 <p class="post-meta">
-                    Published on August 9, 2024 by Alexandre Giron
+                    Published on August 9, 2024, updated on August 10, 2024 by Alexandre Giron
                 </p>
 		<figure>
 			<img src="imgs/pitfalls-crypto.png" alt="OpenArt AI-Generated \"Pitfalls and holes in Cryptography using a dark theme\", except for the java icon" style="border-radius: 15px; display: block;  margin-left: auto;  margin-right: auto;  width: 90%;">
@@ -199,6 +199,7 @@
 			So, how can I code such a easy-to-switch API?
 			Well, there are some alternatives and in our repository we choose a pattern: <a href="https://en.wikipedia.org/wiki/Strategy_pattern"> Strategy</a>. 
 			<br><br>
+			Strategy is kind of a set of black-box methods; easy to switch between them. 
 			I know, there are cons to that, but if we want to do something like <em>traditional -> hybrid -> PQ-only </em> 
 			it means that there are three strategies to deal with. 
 			It's not that simple but this is the general idea that we select for our implementation.
@@ -400,9 +401,11 @@
 		perhaps the performance could be further improved that way. 
 		Therefore, x25519 is a better choice for the hybrid.
 		<br><br>
-		Some details are missing, such as the KDF functions that we use. Also, we map x25519 with Kyber512 <em> and </em> Kyber768. It seems that Kyber768 will be used as default (examples
+		Some details are missing, such as the KDF instances that we use (but I don't think they would change the results). 
+		Also, we map x25519 with Kyber512 <em> and </em> Kyber768, because there is no level-3 equivalent (differently from NIST P-384).
+		Nevertheless, it seems that Kyber768 with x25519 will be used as default: examples
 		<a href="https://eprint.iacr.org/2024/039"> here</a> and
-		<a href="https://datatracker.ietf.org/doc/draft-tls-westerbaan-xyber768d00/"> here</a>).
+		<a href="https://datatracker.ietf.org/doc/draft-tls-westerbaan-xyber768d00/"> here</a>.
 
 		<br><br>
 		In conclusion, there are some pitfalls in the choices for the algorithms and the design architecture when you migrate your java application.
