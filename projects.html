@@ -100,6 +100,12 @@
                  
                   This research project aims to propose strategies, integrate and evaluate Post-Quantum Cryptography in PKIs and Network Protocols
                 </p>
+		<div>
+			<button type="button" id="button-p1-description" class="button-4"> Abstract: </button>
+			<div id="p1-description" style="display:none">
+			     <p><i>	Digital certificates are widely used, from Internet servers and systems to individual authentication in electronic systems and documents. On the Internet, millions of certificates are issued and renewed daily through the automation provided by the ACME (Automated Certificate Management Environment) communication protocol. Currently, there is a global concern regarding public key cryptography, which could be broken with the advent of quantum computers. Potential future quantum attacks pose a problem for the use of digital certification as it heavily relies on current cryptography. Therefore, the aim of this project is to address challenges related to the automated issuance of certificates that use new encryption schemes designed to withstand quantum attacks. In the post-quantum scenario, new challenges arise, including the performance of network protocols with the new encryption schemes, the difficulties of large-scale certificate renewal for Internet servers, the absence of negotiation methods for hybrid post-quantum cryptographic algorithms, and interoperability mechanisms for post-quantum certificate issuance. To address these problems, a survey of automated certificate issuance and renewal techniques and standards will be conducted to adapt and evaluate them for the post-quantum scenario. In practical terms, the ACME protocol will be modified, evaluated, and integrated with other certificate provisioning techniques. Through this methodology, the project aims to obtain new implementations of post-quantum certificate management, formulate best practice guidelines, compare the security and performance of the developed solutions, and contribute to research in post-quantum security. </i></p>
+			</div>
+		</div>
               </div>
             </div>
           </div>
@@ -116,6 +122,12 @@
                 <p>
                   Establish (Hybrid) Post-Quantum Cryptography in CZERTAINLY open source plaftorm.
                 </p>
+		<div>
+                        <button type="button" id="button-p2-description" class="button-4"> Abstract: </button>
+                        <div id="p2-description" style="display:none">
+                             <p><i> Currently, public key cryptographic schemes (such as digital signature schemes) are considered vulnerable with the advent of quantum computers. The vulnerability suggests that current schemes will need to be replaced by new encryption schemes that are resistant to quantum computers. In this context, this research focuses on the challenges of integrating post-quantum cryptography, with a focus on the hybrid strategy. The hybrid strategy means that the new (post-quantum) schemes interoperate with those currently in use, enabling a migration with better compatibility. However, many systems lack this type of integration. Therefore, the main objective of this project is the study and development of hybrid schemes in Czertainly's open-source software platform. Expected results include performance analysis of the platform with the proposed solution, as well as making the modified platform available for general use, contributing to the open-source community.  </i></p>
+                        </div>
+                </div>
               </div>
             </div>
           </div>
@@ -132,8 +144,15 @@
                   AVACPQ-R
                 </h5>
                 <p>
-                   This research aims to improve learning of Post-Quantum Cryptography: Lattice-based Cryptography and Cryptanalysis. Test <a href="https://grupocpq.td.utfpr.edu.br/">here</a> (Soon!).
+                   This extension project aims to improve learning of Post-Quantum Cryptography: Lattice-based Cryptography and Cryptanalysis. Test <a href="https://grupocpq.td.utfpr.edu.br/">here</a> (Soon!).
                 </p>
+		<div>
+                        <button type="button" id="button-p3-description" class="button-4"> Abstract: </button>
+                        <div id="p3-description" style="display:none">
+                             <p><i> Currently, there is a global concern regarding cybersecurity. More specifically, public key cryptography used on the Internet is considered insecure with the advent of quantum computers. Therefore, raising awareness about the threats posed by quantum computers to cryptography – as well as potential solutions – is of fundamental importance for the security of future networks and systems. Post-Quantum Cryptography (PQC) is designed to resist attacks from quantum computers, with lattice-based schemes being the most promising. In PQC, one aspect that requires attention is the trust in new cryptographic schemes. This trust is built in various ways, but mainly through the evolution of cryptanalysis for each algorithm. However, cryptanalysis is typically a complex and difficult subject to understand. The lack of supporting materials in Portuguese, as well as specialized educational tools, may contribute to this problem. In this context, the project 'Development of a Website for teaching lattice-based post-quantum cryptography' aims to assist in the understanding of lattice-based cryptography. A visual tool in the form of a website will be developed to explain the functioning of this type of cryptography from the perspective of the mathematical concepts involved. It is expected to attract more people to the field through presentations and workshops using the tool. Considering that post-quantum cryptography will become a reality in the near future, this kind of knowledge (as well as the associated security threats) is important and strategic for the cybersecurity of public institutions and companies. The tool will be made openly available to the community, allowing for better feedback and facilitating its adoption in courses related to cybersecurity. </i></p>
+                        </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -154,6 +173,13 @@
                   <!-- Not all companies and institutions have enough resources and staff to ensure the security of their systems. This extension project is not necessarily related to PQC but aims to improve the security of systems used in the local (or regional) community.-->
 		  This is a R&D project aiming at the challenges of integrating PQC in blockchains. <i>BBPQ</i> is part of <a href="https://www.rnp.br/en/news/iliada-project-launches-public-call-research-and-development-blockchain">ILIADA/RNP</a>.
                 </p>
+		<div>
+                        <button type="button" id="button-p4-description" class="button-4" > Abstract: </button>
+                        <div id="p4-description" style="display:none">
+                             <p><i> The adoption of blockchains as an enabling technology has appeared in several areas, such as industrial and educational applications. Once deployed, such blockchains may require use and maintenance for many years. However, some of the cryptographic schemes (such as digital signatures) used today in blockchains are vulnerable to the advent of the quantum computer. In this context, this research aims to address the challenges of integrating post-quantum cryptography - resistant to quantum computers - into blockchain. It is expected to provide and evaluate a post-quantum blockchain infrastructure, considering efficiency analyzes (time x space), with an emphasis on those with smaller signature artifacts.  </i></p>
+                        </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -409,6 +435,41 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>
   <!-- End Google Map -->
+
+  <script type="text/javascript">
+        /*document.getElementById("button-p1-description").onclick = function () {
+            document.getElementById("p1-description").style.display = "inline";
+        }*/
+
+	$(function() {
+    		$('#button-p1-description').click(function(){    
+        		$('#p1-description').toggle('slow'); 
+    		});
+	});
+
+
+        $(function() {
+                $('#button-p2-description').click(function(){
+                        $('#p2-description').toggle('slow');
+                });
+        });
+
+
+        $(function() {
+                $('#button-p3-description').click(function(){
+                        $('#p3-description').toggle('slow');
+                });
+        });
+
+        $(function() {
+                $('#button-p4-description').click(function(){
+                        $('#p4-description').toggle('slow');
+                });
+        });
+
+
+    </script>
+
 
 </body>
 
