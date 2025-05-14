@@ -1,0 +1,267 @@
+/* Members Page */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.member-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.member-card.detailed {
+  display: flex;
+  text-align: left;
+  padding: 0;
+}
+
+.member-photo {
+  height: 200px;
+  background-color: #ddd;
+  background-size: cover;
+  background-position: center;
+}
+
+.member-card.detailed .member-photo {
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+}
+
+.member-card.detailed .member-info {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.member-position {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.member-bio {
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.member-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.member-email, .member-website {
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+.member-social {
+  display: flex;
+  gap: 15px;
+}
+
+.member-social a {
+  color: #666;
+}
+
+.member-social a:hover {
+  color: var(--primary-color);
+}
+
+/* Team Members Page Styles */
+.under-construction {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 15px;
+  background-color: rgba(201, 215, 0, 0.2);
+  border-radius: 20px;
+  font-style: italic;
+  color: #666;
+}
+
+/* Coordinator Card */
+.coordinator-card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: var(--shadow);
+  margin-top: 40px;
+  transition: var(--transition);
+}
+
+.coordinator-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.coordinator-card .member-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 4px solid var(--primary-color);
+}
+
+.coordinator-card .member-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coordinator-card .member-info {
+  flex-grow: 1;
+}
+
+.coordinator-card h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+.member-position {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.member-details {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.member-links {
+  display: flex;
+  gap: 20px;
+}
+
+.member-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--secondary-color);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.member-link:hover {
+  color: var(--primary-color);
+}
+
+.member-link-placeholder {
+  color: #999;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* Members Grid */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.member-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.member-card .member-photo {
+  height: auto;
+  aspect-ratio: 1 / 1; /* Make it square */
+  overflow: hidden;
+  position: relative;
+}
+
+.member-card .member-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center; /* Focus on the top part (face) of the image */
+  transition: transform 0.5s ease;
+}
+
+.member-card:hover .member-photo img {
+  transform: scale(1.05);
+}
+
+.member-card .member-info {
+  padding: 25px;
+}
+
+.member-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--secondary-color);
+}
+
+.member-card .member-position {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.member-card .member-details {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .coordinator-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .coordinator-card .member-photo {
+    margin: 0 auto;
+  }
+
+  .member-links {
+    justify-content: center;
+  }
+
+  .members-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .member-card.detailed {
+    flex-direction: column;
+  }
+
+  .member-card.detailed .member-photo {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+@media (max-width: 992px) {
+  .members-grid {
+    grid-template-columns: 1fr;
+  }
+}

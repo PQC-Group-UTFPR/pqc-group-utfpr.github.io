@@ -1,476 +1,349 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <link rel="icon" href="images/favicon.png" type="image/gif" />
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-
-  <title>Grupo PQC UTFPR-TD Page</title>
-
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
-
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-
-</head>
-
-<body class="sub_page">
-
-  <div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
-            <span>
-              Grupo PQC UTFPR-TD
-            </span>
-          </a>
-
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class=""> </span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link pl-lg-0" href="index.html">Mission <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="projects.html">Projects</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="group_members.html"> Group Members</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html#info_contact">Contact Us</a>
-              </li>
-            </ul>
-            <!--<from class="search_form">
-              <input type="text" class="form-control" placeholder="Search here...">
-              <button class="" type="submit">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </button>
-            </from>-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - PQC Group UTFPR</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/projects.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="index.html" class="logo">Grupo PQC UTFPR-TD</a>
+        <nav>
+          <ul>
+            <li><a href="index.html#mission">Mission</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="group_members.html">Group Members</a></li>
+            <li><a href="blog/index.html">Blog & News</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+          </ul>
+          <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </nav>
       </div>
     </header>
-    <!-- end header section -->
-  </div>
 
-
-  <!-- project's section -->
-
-  <section class="catagory_section layout_padding">  
-    <div class="catagory_container">
-      <div class="container ">
-        <div class="heading_container heading_center">
-          <h1>
-            Research & Development Projects
-          </h1>
-          <p>
-            Currently, our group is working on the following projects:
-          </p>
+    <main>
+      <!-- Page Header -->
+      <section class="page-header">
+        <div class="container">
+          <h1>Research & Development Projects</h1>
+          <p>Currently, our group is working on the following projects</p>
         </div>
-        <div class="row">
-          <div class="col-sm-7 col-md-6 ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="images/logo-grupo-pqc-utfpr.png" alt="">
+      </section>
+
+      <!-- Projects Section -->
+      <section class="section">
+        <div class="container">
+          <div class="projects-list-no-image">
+            <!-- Project 1 -->
+            <div id="pki-post-quantum" class="project-item-no-image">
+              <div class="project-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
+                </svg>
               </div>
-              <div class="detail-box">
-                <h5>
-                  PKI for the Post-Quantum Era
-                </h5>
-                <p>
-                 
-                  This research project aims to propose strategies, integrate and evaluate Post-Quantum Cryptography in PKIs and Network Protocols
-                </p>
-		<div>
-			<button type="button" id="button-p1-description" class="button-4"> Abstract: </button>
-			<div id="p1-description" style="display:none">
-			     <p><i>	Digital certificates are widely used, from Internet servers and systems to individual authentication in electronic systems and documents. On the Internet, millions of certificates are issued and renewed daily through the automation provided by the ACME (Automated Certificate Management Environment) communication protocol. Currently, there is a global concern regarding public key cryptography, which could be broken with the advent of quantum computers. Potential future quantum attacks pose a problem for the use of digital certification as it heavily relies on current cryptography. Therefore, the aim of this project is to address challenges related to the automated issuance of certificates that use new encryption schemes designed to withstand quantum attacks. In the post-quantum scenario, new challenges arise, including the performance of network protocols with the new encryption schemes, the difficulties of large-scale certificate renewal for Internet servers, the absence of negotiation methods for hybrid post-quantum cryptographic algorithms, and interoperability mechanisms for post-quantum certificate issuance. To address these problems, a survey of automated certificate issuance and renewal techniques and standards will be conducted to adapt and evaluate them for the post-quantum scenario. In practical terms, the ACME protocol will be modified, evaluated, and integrated with other certificate provisioning techniques. Through this methodology, the project aims to obtain new implementations of post-quantum certificate management, formulate best practice guidelines, compare the security and performance of the developed solutions, and contribute to research in post-quantum security. </i></p>
-			</div>
-		</div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-sm-7 col-md-6 ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="images/logo-grupo-pqc-utfpr.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  Post-Quantum Cryptography in CZERTAINLY open source platform
-                </h5>
-                <p>
-                  Establish (Hybrid) Post-Quantum Cryptography in CZERTAINLY open source plaftorm.
-                </p>
-		<div>
-                        <button type="button" id="button-p2-description" class="button-4"> Abstract: </button>
-                        <div id="p2-description" style="display:none">
-                             <p><i> Currently, public key cryptographic schemes (such as digital signature schemes) are considered vulnerable with the advent of quantum computers. The vulnerability suggests that current schemes will need to be replaced by new encryption schemes that are resistant to quantum computers. In this context, this research focuses on the challenges of integrating post-quantum cryptography, with a focus on the hybrid strategy. The hybrid strategy means that the new (post-quantum) schemes interoperate with those currently in use, enabling a migration with better compatibility. However, many systems lack this type of integration. Therefore, the main objective of this project is the study and development of hybrid schemes in Czertainly's open-source software platform. Expected results include performance analysis of the platform with the proposed solution, as well as making the modified platform available for general use, contributing to the open-source community.  </i></p>
-                        </div>
+              <div class="project-content">
+                <h2>PKI for the Post-Quantum Era</h2>
+                <div class="project-meta">
+                  <span class="project-status">Active</span>
+                  <span class="project-date">Started: 2022</span>
                 </div>
-              </div>
-            </div>
-          </div>
-         </div>
-          
-         <div class="row">
-          <div class="col-sm-7 col-md-6 ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="images/logo-grupo-pqc-utfpr.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  AVACPQ-R
-                </h5>
-                <p>
-                   This extension project aims to improve learning of Post-Quantum Cryptography: Lattice-based Cryptography and Cryptanalysis. Test <a href="https://grupocpq.td.utfpr.edu.br/">here</a> (Soon!).
+                <p class="project-description">
+                This research project aims to propose strategies, integrate and evaluate Post-Quantum Cryptography in PKIs and Network Protocols.
                 </p>
-		<div>
-                        <button type="button" id="button-p3-description" class="button-4"> Abstract: </button>
-                        <div id="p3-description" style="display:none">
-                             <p><i> Currently, there is a global concern regarding cybersecurity. More specifically, public key cryptography used on the Internet is considered insecure with the advent of quantum computers. Therefore, raising awareness about the threats posed by quantum computers to cryptography – as well as potential solutions – is of fundamental importance for the security of future networks and systems. Post-Quantum Cryptography (PQC) is designed to resist attacks from quantum computers, with lattice-based schemes being the most promising. In PQC, one aspect that requires attention is the trust in new cryptographic schemes. This trust is built in various ways, but mainly through the evolution of cryptanalysis for each algorithm. However, cryptanalysis is typically a complex and difficult subject to understand. The lack of supporting materials in Portuguese, as well as specialized educational tools, may contribute to this problem. In this context, the project 'Development of a Website for teaching lattice-based post-quantum cryptography' aims to assist in the understanding of lattice-based cryptography. A visual tool in the form of a website will be developed to explain the functioning of this type of cryptography from the perspective of the mathematical concepts involved. It is expected to attract more people to the field through presentations and workshops using the tool. Considering that post-quantum cryptography will become a reality in the near future, this kind of knowledge (as well as the associated security threats) is important and strategic for the cybersecurity of public institutions and companies. The tool will be made openly available to the community, allowing for better feedback and facilitating its adoption in courses related to cybersecurity. </i></p>
-                        </div>
+                <div class="project-abstract">
+                  <button class="abstract-toggle btn secondary">Abstract</button>
+                  <div class="abstract-content">
+                    <p><em>Digital certificates are widely used, from Internet servers and systems to individual authentication in electronic systems and documents. On the Internet, millions of certificates are issued and renewed daily through the automation provided by the ACME (Automated Certificate Management Environment) communication protocol. Currently, there is a global concern regarding public key cryptography, which could be broken with the advent of quantum computers. Potential future quantum attacks pose a problem for the use of digital certification as it heavily relies on current cryptography. Therefore, the aim of this project is to address challenges related to the automated issuance of certificates that use new encryption schemes designed to withstand quantum attacks. In the post-quantum scenario, new challenges arise, including the performance of network protocols with the new encryption schemes, the difficulties of large-scale certificate renewal for Internet servers, the absence of negotiation methods for hybrid post-quantum cryptographic algorithms, and interoperability mechanisms for post-quantum certificate issuance. To address these problems, a survey of automated certificate issuance and renewal techniques and standards will be conducted to adapt and evaluate them for the post-quantum scenario. In practical terms, the ACME protocol will be modified, evaluated, and integrated with other certificate provisioning techniques. Through this methodology, the project aims to obtain new implementations of post-quantum certificate management, formulate best practice guidelines, compare the security and performance of the developed solutions, and contribute to research in post-quantum security.</em></p>
+                  </div>
                 </div>
-
+                <h3>Research Objectives:</h3>
+                <ul>
+                  <li>Propose strategies for integrating PQC in PKIs</li>
+                  <li>Modify and evaluate the ACME protocol for post-quantum scenarios</li>
+                  <li>Develop implementations of post-quantum certificate management</li>
+                  <li>Formulate best practice guidelines for post-quantum PKI</li>
+                </ul>
               </div>
             </div>
-          </div>
 
-
- 	  <div class="col-sm-7 col-md-6 ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="images/logo-grupo-pqc-utfpr.png" alt="">
+            <!-- Project 2 -->
+            <div id="czertainly" class="project-item-no-image">
+              <div class="project-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
               </div>
-              <div class="detail-box">
-                <h5>
-                  <!--Towards the search for security vulnerabilities in regional and open source community systems -->
-		  Benchmarking Post-Quantum Blockchain <br>
-		 <i>(BBPQ - Benchmark de Blockchain Pós-Quântica)</i>
-                </h5>
-                <p>
-                  <!-- Not all companies and institutions have enough resources and staff to ensure the security of their systems. This extension project is not necessarily related to PQC but aims to improve the security of systems used in the local (or regional) community.-->
-		  This is a R&D project aiming at the challenges of integrating PQC in blockchains. <i>BBPQ</i> is part of <a href="https://www.rnp.br/en/news/iliada-project-launches-public-call-research-and-development-blockchain">ILIADA/RNP</a>.
+              <div class="project-content">
+                <h2>Post-Quantum Cryptography in CZERTAINLY</h2>
+                <div class="project-meta">
+                  <span class="project-status">Active</span>
+                  <span class="project-date">Started: 2023</span>
+                </div>
+                <p class="project-description">
+                Establish (Hybrid) Post-Quantum Cryptography in CZERTAINLY open source platform.
                 </p>
-		<div>
-                        <button type="button" id="button-p4-description" class="button-4" > Abstract: </button>
-                        <div id="p4-description" style="display:none">
-                             <p><i> The adoption of blockchains as an enabling technology has appeared in several areas, such as industrial and educational applications. Once deployed, such blockchains may require use and maintenance for many years. However, some of the cryptographic schemes (such as digital signatures) used today in blockchains are vulnerable to the advent of the quantum computer. In this context, this research aims to address the challenges of integrating post-quantum cryptography - resistant to quantum computers - into blockchain. It is expected to provide and evaluate a post-quantum blockchain infrastructure, considering efficiency analyzes (time x space), with an emphasis on those with smaller signature artifacts.  </i></p>
-                        </div>
+                <div class="project-abstract">
+                  <button class="abstract-toggle btn secondary">Abstract</button>
+                  <div class="abstract-content">
+                    <p><em>Currently, public key cryptographic schemes (such as digital signature schemes) are considered vulnerable with the advent of quantum computers. The vulnerability suggests that current schemes will need to be replaced by new encryption schemes that are resistant to quantum computers. In this context, this research focuses on the challenges of integrating post-quantum cryptography, with a focus on the hybrid strategy. The hybrid strategy means that the new (post-quantum) schemes interoperate with those currently in use, enabling a migration with better compatibility. However, many systems lack this type of integration. Therefore, the main objective of this project is the study and development of hybrid schemes in Czertainly's open-source software platform. Expected results include performance analysis of the platform with the proposed solution, as well as making the modified platform available for general use, contributing to the open-source community.</em></p>
+                  </div>
                 </div>
+                <h3>Research Objectives:</h3>
+                <ul>
+                  <li>Study and develop hybrid cryptographic schemes</li>
+                  <li>Integrate post-quantum cryptography into the CZERTAINLY platform</li>
+                  <li>Analyze performance of the platform with post-quantum solutions</li>
+                  <li>Contribute to the open-source community with PQC implementations</li>
+                </ul>
+              </div>
+            </div>
 
+            <!-- Project 3 -->
+            <div id="avacpq-r" class="project-item-no-image">
+              <div class="project-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <div class="project-content">
+                <h2>AVACPQ-R</h2>
+                <div class="project-meta">
+                  <span class="project-status">Active</span>
+                  <span class="project-date">Started: 2023</span>
+                </div>
+                <p class="project-description">
+                This extension project aims to improve learning of Post-Quantum Cryptography: Lattice-based Cryptography and Cryptanalysis. Test <a href="https://grupocpq.td.utfpr.edu.br/">here</a> (Soon!).
+                </p>
+                <div class="project-abstract">
+                  <button class="abstract-toggle btn secondary">Abstract</button>
+                  <div class="abstract-content">
+                    <p><em>Currently, there is a global concern regarding cybersecurity. More specifically, public key cryptography used on the Internet is considered insecure with the advent of quantum computers. Therefore, raising awareness about the threats posed by quantum computers to cryptography – as well as potential solutions – is of fundamental importance for the security of future networks and systems. Post-Quantum Cryptography (PQC) is designed to resist attacks from quantum computers, with lattice-based schemes being the most promising. In PQC, one aspect that requires attention is the trust in new cryptographic schemes. This trust is built in various ways, but mainly through the evolution of cryptanalysis for each algorithm. However, cryptanalysis is typically a complex and difficult subject to understand. The lack of supporting materials in Portuguese, as well as specialized educational tools, may contribute to this problem. In this context, the project 'Development of a Website for teaching lattice-based post-quantum cryptography' aims to assist in the understanding of lattice-based cryptography. A visual tool in the form of a website will be developed to explain the functioning of this type of cryptography from the perspective of the mathematical concepts involved. It is expected to attract more people to the field through presentations and workshops using the tool. Considering that post-quantum cryptography will become a reality in the near future, this kind of knowledge (as well as the associated security threats) is important and strategic for the cybersecurity of public institutions and companies. The tool will be made openly available to the community, allowing for better feedback and facilitating its adoption in courses related to cybersecurity.</em></p>
+                  </div>
+                </div>
+                <h3>Project Objectives:</h3>
+                <ul>
+                  <li>Develop a visual tool for teaching lattice-based cryptography</li>
+                  <li>Create educational materials in Portuguese</li>
+                  <li>Conduct presentations and workshops using the tool</li>
+                  <li>Make the tool openly available to the community</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div id="bbpq" class="project-item-no-image">
+              <div class="project-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div class="project-content">
+                <h2>Benchmarking Post-Quantum Blockchain</h2>
+                <h3 class="project-subtitle"><em>(BBPQ - Benchmark de Blockchain Pós-Quântica)</em></h3>
+                <div class="project-meta">
+                  <span class="project-status">Active</span>
+                  <span class="project-date">Started: 2024</span>
+                </div>
+                <p class="project-description">
+                This is a R&D project aiming at the challenges of integrating PQC in blockchains. <em>BBPQ</em> is part of <a href="https://www.rnp.br/en/news/iliada-project-launches-public-call-research-and-development-blockchain">ILIADA/RNP</a>.
+                </p>
+                <div class="project-abstract">
+                  <button class="abstract-toggle btn secondary">Abstract</button>
+                  <div class="abstract-content">
+                    <p><em>The adoption of blockchains as an enabling technology has appeared in several areas, such as industrial and educational applications. Once deployed, such blockchains may require use and maintenance for many years. However, some of the cryptographic schemes (such as digital signatures) used today in blockchains are vulnerable to the advent of the quantum computer. In this context, this research aims to address the challenges of integrating post-quantum cryptography - resistant to quantum computers - into blockchain. It is expected to provide and evaluate a post-quantum blockchain infrastructure, considering efficiency analyzes (time x space), with an emphasis on those with smaller signature artifacts.</em></p>
+                  </div>
+                </div>
+                <h3>Research Objectives:</h3>
+                <ul>
+                  <li>Address challenges of integrating PQC into blockchain</li>
+                  <li>Provide and evaluate post-quantum blockchain infrastructure</li>
+                  <li>Analyze efficiency (time x space) of PQC in blockchain</li>
+                  <li>Focus on solutions with smaller signature artifacts</li>
+                </ul>
               </div>
             </div>
           </div>
-       
         </div>
+      </section>
 
-      </div>
-    </div>
-  </section>
+      <!-- Partners & Collaborators Section -->
+      <section class="section bg-light">
+        <div class="container">
+          <h2>Partners & Collaborators</h2>
+          <p class="section-intro">We are privileged to work with:</p>
 
- <!-- partnerships -->
-
-  <section class="catagory_section layout_padding">  
-    <div class="catagory_container">
-      <div class="container ">
-        <div class="heading_container heading_center">
-          <h1>
-           Partners & Collaborators
-          </h1>
-          <p>
-            We are privileged to work with:
-          </p>
-        </div>
-        <div class="row">
-          <div class="col-sm-6 col-md-4 ">
-            <div class="box ">
-              <div class="box">
-                <a target="_blank" href="https://www.czertainly.com/">
-                  <img src="images/partners/czertainly.png" alt="">
-                </a> 
-              </div>
-              <div class="detail-box">
-              </div>
-            </div>
-          </div>        
-          <div class="col-sm-6 col-md-4 ">
-            <div class="box ">
-              <div class="box">
-		<a target="_blank" href="https://www.dinamonetworks.com/">
-                   <img src="images/partners/dinamo.png" alt="">
-              	</a>                 
-              </div>
-              <div class="detail-box">
-              </div>
-            </div>
-          </div>
-     
-         <div class="col-sm-6 col-md-4 ">
-            <div class="box " style="margin-bottom:-10px;">
-              <div class="box" style="margin-bottom:-10px;">
-                <a target="_blank" href="https://www.rnp.br/">
-                   <img src="images/partners/rnp.png" alt="" width="260">
-                </a>
-              </div>
-              <div class="detail-box">
-              </div>
-            </div>
-          </div>
-      
-          
-     <!-- <div class="col-sm-6 col-md-4 ">
-            <div class="box ">
-              <div class="box">
-                <img src="images/logo-grupo-pqc-utfpr.png" alt="">
-              </div>
-              <div class="detail-box">
-              </div>
-            </div>
-          </div>
-	-->
-          
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- calls section -->
-  <section class="catagory_section layout_padding">
-    <div class="catagory_container">
-      <div class="container ">
-        <div class="heading_container heading_center" id="grants">
-          <h1>
-            Grants 
-          </h1>
-	  <p> (Calls for Applications)
-	  </p>
-	  <br>
-
-
-          <div class="client_container ">
-            <div class="client_id">
-               <div class="img-box">
-                 <img src="images/grant.png" alt="" style="width:10%; height:auto;"><b> <a href="https://www.rnp.br/noticias/projeto-iliada-lanca-chamada-publica-para-pesquisa-e-desenvolvimento-em-blockchain"> RNP/ILIADA (2º admission process)  </a> </b>
-
-
-               </div>
-               <div class="client_name">
-                 <h5>
-                  Level: Undergraduate <br />
-                  Admission process (portuguese): <a href="challenges/index.html" target="blank"> click here </a> <br />
-                  Deadline: 27/10/2024. <br />
-                 </h5>
-               </div>
-            </div>
-          </div>
-	<br>
-
-
-
-	 
-          <div class="client_container ">
-            <div class="client_id">
-               <div class="img-box">
-                 <img src="images/grant.png" alt="" style="width:10%; height:auto;"><b> <a href="https://www.rnp.br/noticias/projeto-iliada-lanca-chamada-publica-para-pesquisa-e-desenvolvimento-em-blockchain"> RNP/ILIADA  </a> </b>
-
-               </div>
-               <div class="client_name">
-                 <h5>
-                  Level: Undergraduate <br />
-                  Admission process (portuguese): <a href="challenges/index.html" target="blank"> click here </a> <br />
-                  Deadline: 06/09/2024. <br />
-                 </h5>
-               </div>
-            </div>
-          </div>
-
-
-          <br />
-	 <div class="col-md-6 mx-auto">
-          <div class="client_container ">
-            <div class="client_id">
-               <div class="img-box">
-                 <img src="images/grant.png" alt="" style="width:10%; height:auto;"><b> <a href="https://www.utfpr.edu.br/editais/pesquisa-e-pos-graduacao/reitoria/edital-proppg-12-2024-programa-de-apoio-a-grupos-de-pesquisas-na-area-de-ciencias-da-computacao"> PROPPG-UTFPR 12/2024 </a> </b>
-               </div>
-               <div class="client_name"> 
-                 <h5>
-		  Level: Undergraduate <br />
-                  Admission process (portuguese): <a href="https://sei.utfpr.edu.br/sei/publicacoes/controlador_publicacoes.php?acao=publicacao_visualizar&id_documento=4600524&id_orgao_publicacao=0" target="blank"> click here </a> <br />
-                  Deadline: 15/06/2024. <br />
-                 </h5>
-               </div>
-            </div>
-          </div>
-
-
-	 <div class="client_container ">
-            <div class="client_id">
-               <div class="img-box">
-                 <img src="images/grant.png" alt="" style="width:10%; height:auto;"><b> <a href="https://www.utfpr.edu.br/editais/pesquisa-e-pos-graduacao/reitoria/programa-institucional-de-iniciacao-cientifica-pibic-e-programa-institucional-de-iniciacao-cientifica-acoes-afirmativas-pibic-af-ciclo-2024-2025">  PIBIC-UTFPR 2024-2025 </a> </b>
-               </div>
-               <div class="client_name">
-                 <h5>
-                  Level: Undergraduate <br />
-                  Admission process (portuguese): <a href="challenges/index.html" target="blank"> click here </a> <br />
-                  Deadline: 15/06/2024. <br />
-                 </h5>
-               </div>
-            </div>
-          </div>
-
-
-<!--
-	<div class="client_container ">
-            <div class="client_id">
-               <div class="img-box">
-                 <img src="images/grant.png" alt="" style="width:10%; height:auto;"><b> <a href=""> PROPPG 12/2024 </a> </b>
-
-               </div>
-               <div class="client_name">
-                 <h5>
-                  Level: Undergraduate <br />
-                  Admission process: <a href="linkaqui" target="blank"> link </a> <br />
-                  Deadline: 20/05/2024. <br />
-                 </h5>
-               </div>
-            </div>
-          </div>
--->
-
-        </div>
-       </div>
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-
-  <!-- info section -->
-
-  <section class="info_section layout_padding2">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-lg-3 info-col">
-          <div class="info_detail">
-            <h4>
-              Grupo PQC UTFPR
-            </h4>
-            <p>
-              Registered at the Federal University of Technology - Parana (UTFPR), Toledo Campus. Cristo Rei Street, 19 CEP 85902-490 Toledo-PR, Brazil
-              </p>
-            <!--<div class="info_social">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
+          <div class="partners-grid">
+            <div class="partner-card">
+              <a href="https://www.czertainly.com/" target="_blank" rel="noopener noreferrer">
+                <div class="partner-logo">
+                  <img src="./images/partners/czertainly.png" width="200px" alt="CZERTAINLY Logo">
+                </div>
+                <h3>CZERTAINLY</h3>
               </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </div>
+
+            <div class="partner-card">
+              <a href="https://www.dinamonetworks.com/" target="_blank" rel="noopener noreferrer">
+                <div class="partner-logo">
+                  <img src="./images/partners/dinamo.png" width="200px" alt="Dinamo Networks Logo">
+                </div>
+                <h3>Dinamo Networks</h3>
               </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </div>
+
+            <div class="partner-card">
+              <a href="https://www.rnp.br/" target="_blank" rel="noopener noreferrer">
+                <div class="partner-logo">
+                  <img src="./images/partners/rnp.png" width="200px" alt="RNP Logo">
+                </div>
+                <h3>RNP</h3>
               </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-            </div>-->
+            </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3 info-col">
-        <div class="map_container">
-              
-          <!--    <div class="img-box">
-                <img src="images/UTFPR-campus-toledo.jpeg" alt="" style="width: 100%; height: auto;">
-              </div>-->
-            
+      </section>
+
+      <!-- Grants Section -->
+      <section class="section">
+        <div class="container">
+          <h2>Grants</h2>
+          <p class="section-intro">Calls for Applications</p>
+
+          <div class="grants-list">
+            <div class="grant-item">
+              <div class="grant-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <div class="grant-content">
+                <h3><a href="https://www.rnp.br/noticias/projeto-iliada-lanca-chamada-publica-para-pesquisa-e-desenvolvimento-em-blockchain" target="_blank" rel="noopener noreferrer">RNP/ILIADA (2º admission process)</a></h3>
+                <ul class="grant-details">
+                  <li><strong>Level:</strong> Undergraduate</li>
+                  <li><strong>Admission process:</strong> <a href="challenges/index.html" target="_blank">Click here</a></li>
+                  <li><strong>Deadline:</strong> October 27, 2024</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="grant-item">
+              <div class="grant-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <div class="grant-content">
+                <h3><a href="https://www.rnp.br/noticias/projeto-iliada-lanca-chamada-publica-para-pesquisa-e-desenvolvimento-em-blockchain" target="_blank" rel="noopener noreferrer">RNP/ILIADA</a></h3>
+                <ul class="grant-details">
+                  <li><strong>Level:</strong> Undergraduate</li>
+                  <li><strong>Admission process:</strong> <a href="challenges/index.html" target="_blank">Click here</a></li>
+                  <li><strong>Deadline:</strong> September 6, 2024</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="grant-item">
+              <div class="grant-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <div class="grant-content">
+                <h3><a href="https://www.utfpr.edu.br/editais/pesquisa-e-pos-graduacao/reitoria/edital-proppg-12-2024-programa-de-apoio-a-grupos-de-pesquisas-na-area-de-ciencias-da-computacao" target="_blank" rel="noopener noreferrer">PROPPG-UTFPR 12/2024</a></h3>
+                <ul class="grant-details">
+                  <li><strong>Level:</strong> Undergraduate</li>
+                  <li><strong>Admission process:</strong> <a href="https://sei.utfpr.edu.br/sei/publicacoes/controlador_publicacoes.php?acao=publicacao_visualizar&id_documento=4600524&id_orgao_publicacao=0" target="_blank">Click here</a></li>
+                  <li><strong>Deadline:</strong> June 15, 2024</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="grant-item">
+              <div class="grant-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <div class="grant-content">
+                <h3><a href="https://www.utfpr.edu.br/editais/pesquisa-e-pos-graduacao/reitoria/programa-institucional-de-iniciacao-cientifica-pibic-e-programa-institucional-de-iniciacao-cientifica-acoes-afirmativas-pibic-af-ciclo-2024-2025" target="_blank" rel="noopener noreferrer">PIBIC-UTFPR 2024-2025</a></h3>
+                <ul class="grant-details">
+                  <li><strong>Level:</strong> Undergraduate</li>
+                  <li><strong>Admission process:</strong> <a href="challenges/index.html" target="_blank">Click here</a></li>
+                  <li><strong>Deadline:</strong> June 15, 2024</li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>        
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <h3>PQC Group UTFPR</h3>
+            <p>Post Quantum Cryptography Research Group</p>
+            <p>Federal University of Technology - Paraná (UTFPR)<br>
+            Campus Toledo<br>
+            Rua Cristo Rei, 19<br>
+            Toledo - PR, 85902-490, Brazil</p>
+          </div>
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html#mission">Mission</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="group_members.html">Group Members</a></li>
+              <li><a href="blog/index.html">Blog & News</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-social">
+            <h3>Connect With Us</h3>
+            <div class="social-icons">
+              <a href="https://github.com/PQC-Group-UTFPR" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+              <a href="mailto:pqc-group@utfpr.edu.br" aria-label="Email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 PQC Group UTFPR. All rights reserved.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- end info section -->
-
-  <!-- footer section -->
-  <footer class="footer_section">
-    <div class="container">
-      <p>
-        &copy; <span id="displayYear"></span> Book "Bostorek" Template from 
-        <a href="https://html.design/">Free Html Templates</a>, Icons from <a href="https://www.flaticon.com/free-icons/grant" title="grant icons">Flaticon</a>
-      </p>
-    </div>
-  </footer>
-  <!-- footer section -->
-
-  <!-- jQery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
-  <!-- custom js -->
-  <script src="js/custom.js"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-  </script>
-  <!-- End Google Map -->
-
-  <script type="text/javascript">
-        /*document.getElementById("button-p1-description").onclick = function () {
-            document.getElementById("p1-description").style.display = "inline";
-        }*/
-
-	$(function() {
-    		$('#button-p1-description').click(function(){    
-        		$('#p1-description').toggle('slow'); 
-    		});
-	});
-
-
-        $(function() {
-                $('#button-p2-description').click(function(){
-                        $('#p2-description').toggle('slow');
-                });
-        });
-
-
-        $(function() {
-                $('#button-p3-description').click(function(){
-                        $('#p3-description').toggle('slow');
-                });
-        });
-
-        $(function() {
-                $('#button-p4-description').click(function(){
-                        $('#p4-description').toggle('slow');
-                });
-        });
-
-
-    </script>
-
-
-</body>
-
+    <script src="./js/script.js"></script>
+  </body>
 </html>

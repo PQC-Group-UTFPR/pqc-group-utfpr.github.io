@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   sodipodi:docname="logo-grupo-pqc-utfpr.svg"
+   inkscape:version="1.4.1 (93de688d07, 2025-03-30)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="300.52038"
+     inkscape:cy="166.17009"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer2" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="SHIELD"
+     style="display:inline">
+    <path
+       id="path1"
+       style="fill:#000000;stroke-width:1.58434;stroke-linecap:round;stroke-linejoin:round"
+       inkscape:label="SHIELD"
+       d="m 255.63005,6.5487568 v 0.039063 C 253.4028,6.5616393 137.62358,5.5854321 73.893726,62.576101 c 9.9e-5,2.89e-4 -1.16e-4,0.0031 0,0.0078 l -0.02734,-0.0098 V 289.94915 h 0.01367 c 0.154712,25.32458 16.649981,96.75305 181.595704,163.9668 v 0.44726 c 0.17063,-0.0692 0.3414,-0.13781 0.51172,-0.20703 0.18184,0.0739 0.36272,0.14678 0.54492,0.2207 v -0.47656 C 421.16223,386.81455 437.86614,315.63866 438.08318,290.18743 h 0.0391 V 288.81829 67.83196 c 0.0105,-3.203052 0.0137,-4.975468 0.01,-5.001953 -0.004,-0.0031 -0.006,-0.0047 -0.01,-0.0078 v -0.01172 l -0.008,0.0039 C 374.38052,5.8409372 258.60511,6.5479611 256.3781,6.5741475 v -0.011719 c 0,0 -0.15724,0.00586 -0.1582,0.00586 -0.0136,1.68e-4 -0.58985,-0.019531 -0.58985,-0.019532 z M 251.81169,43.982351 V 409.38079 l -94.48632,-56.46875 c 0,0 -43.04457,-26.5628 -42.91407,-62.83984 0.13049,-36.27703 0,-209.505865 0,-209.505865 0,0 56.56975,-36.214895 137.40039,-36.583984 z" />
+    <path
+       id="path2"
+       style="fill:#000000;stroke-width:1.58434;stroke-linecap:round;stroke-linejoin:round"
+       d="m 208.1089,64.172716 c -15.92173,0.250055 -24.12856,12.19889 -25.68566,19.119323 l -57.63647,0.602379 c 0,0 -7.50296,1.697169 -6.98099,8.482803 0.52198,6.785634 7.17698,8.090859 7.17698,8.090859 h 5.3492 l 1.30584,15.26782 4.56735,3.78343 23.22663,-0.58794 1.89378,-3.06553 -1.6978,-15.13786 22.77072,-0.19597 c 0,0 2.25782,0.13034 2.23829,4.53435 l -41.52284,41.33924 c 0,0 -5.53588,9.5969 3.13772,11.99599 8.67362,2.39908 12.73454,-3.50699 12.73454,-3.50699 l 11.53801,8.60038 6.65504,-0.39195 15.4638,-15.39778 -0.12996,-5.34921 -12.07026,-9.26465 17.35551,-17.1616 c 0,0 11.59054,6.11443 24.67069,2.60961 13.08014,-3.50482 17.53128,-23.252085 16.23946,-31.187517 -1.29181,-7.935426 -9.22586,-21.593494 -27.31125,-23.069852 -1.13034,-0.09227 -2.22688,-0.126006 -3.28833,-0.109335 z m 2.15165,16.656173 a 11.02665,10.733041 0 0 1 11.02641,10.731416 11.02665,10.733041 0 0 1 -11.02641,10.733475 11.02665,10.733041 0 0 1 -11.02848,-10.733475 11.02665,10.733041 0 0 1 11.02848,-10.731416 z"
+       inkscape:label="KEYS" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:55.3377px;font-family:'Adwaita Sans';-inkscape-font-specification:'Adwaita Sans Semi-Bold';text-align:start;letter-spacing:2.90462px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:1.7293;stroke-linecap:round;stroke-linejoin:round"
+       x="125.98356"
+       y="242.42416"
+       id="text3"
+       inkscape:label="PQC"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         x="125.98356"
+         y="242.42416"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Adwaita Sans';-inkscape-font-specification:'Adwaita Sans Semi-Bold';letter-spacing:2.90462px;word-spacing:0px;fill:#000000;stroke-width:1.7293">PQC</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:55.3377px;font-family:'Adwaita Sans';-inkscape-font-specification:'Adwaita Sans Semi-Bold';text-align:start;letter-spacing:-0.528113px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;display:inline;fill:#e5f789;fill-opacity:1;stroke-width:1.7293;stroke-linecap:round;stroke-linejoin:round"
+       x="257.19537"
+       y="242.82524"
+       id="text3-5"
+       inkscape:label="Group"><tspan
+         sodipodi:role="line"
+         id="tspan3-29"
+         x="257.19537"
+         y="242.82524"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Adwaita Sans';-inkscape-font-specification:'Adwaita Sans Semi-Bold';letter-spacing:-0.528113px;word-spacing:0px;fill:#e5f789;fill-opacity:1;stroke-width:1.7293">Group</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:55.3377px;font-family:'Adwaita Sans';-inkscape-font-specification:'Adwaita Sans Semi-Bold';text-align:start;letter-spacing:3.69679px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:1.7293;stroke-linecap:round;stroke-linejoin:round"
+       x="163.59879"
+       y="504.80276"
+       id="text3-4"
+       inkscape:label="UTFPR"><tspan
+         sodipodi:role="line"
+         id="tspan3-2"
+         x="163.59879"
+         y="504.80276"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Adwaita Sans';-inkscape-font-specification:'Adwaita Sans Semi-Bold';letter-spacing:3.69679px;word-spacing:0px;fill:#000000;stroke-width:1.7293">UTFPR</tspan></text>
+  </g>
+</svg>

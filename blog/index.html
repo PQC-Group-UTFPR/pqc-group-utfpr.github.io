@@ -1,672 +1,632 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <link rel="icon" href="../images/favicon.png" type="image/gif" />
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-
-<style> 
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-        } 
-  
-  
-        nav { 
-            background-color: #242424; 
-            padding: 10px; 
-        } 
-  
-        nav a { 
-            color: #fff; 
-            text-decoration: none; 
-            padding: 10px; 
-            margin-right: 10px; 
-            display: inline-block; 
-        } 
-  
-        .container { 
-            display: flex; 
-            justify-content: space-between; 
-            max-width: 95%; 
-            margin: 0 auto; 
-            padding: 20px; 
-        } 
-  
-        article p { 
-            text-align: justify; 
-        } 
-  
-        main { 
-            flex: 2; 
-        } 
-  
-        article { 
-            margin-bottom: 10px; 
-            padding: 10px 10px; 
-            margin-right: 10px; 
-        } 
-  
-        aside { 
-            flex: 1; 
-            padding: 10px; 
-        } 
-  
-    </style> 
-
-
-
-
-  <title>Grupo PQC UTFPR-TD Page</title>
-
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
-  <!-- font awesome style -->
-  <link href="../css/font-awesome.min.css" rel="stylesheet" />
-
-  <!-- Custom styles for this template -->
-  <link href="../css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="../css/responsive.css" rel="stylesheet" />
-
-</head>
-
-<body>
-
-  <div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="../index.html">
-            <span>
-              Grupo PQC UTFPR-TD
-            </span>
-          </a>
-
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class=""> </span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link pl-lg-0" href="../index.html">Mission <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../projects.html">Projects</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../group_members.html"> Group Members</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../index.html#info_contact">Contact Us</a>
-              </li>
-            </ul>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & News - PQC Group UTFPR</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: true},
+            {left: "\$$", right: "\$$", display: true},
+            {left: "\\[", right: "\\]", display: true}
+          ],
+          throwOnError: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="../index.html" class="logo">Grupo PQC UTFPR-TD</a>
+        <nav>
+          <ul>
+            <li><a href="../index.html#mission">Mission</a></li>
+            <li><a href="../projects.html">Projects</a></li>
+            <li><a href="../group_members.html">Group Members</a></li>
+            <li><a href="../blog.html" class="active">Blog & News</a></li>
+            <li><a href="../index.html#contact">Contact Us</a></li>
+          </ul>
+          <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </nav>
       </div>
     </header>
-    <!-- end header section -->
 
-    <section id="posts" class="contact_section layout_padding">
-
-	<div class="heading_container ">
-            <h2 class="" style="margin-left:10px">
-              Grupo PQC's (Static!) Blog
-            </h2>
+    <main>
+      <!-- Page Header -->
+      <section class="page-header">
+        <div class="container">
+          <h1>Grupo PQC's Blog</h1>
+          <p>Latest news, research, and insights from our team</p>
         </div>
-	<div class="container">
-	   <div class="row">
-	
-	<main> 
+      </section>
 
- 	    <!-- Most-recent-first fashion. Copy those tags and don't forget to place the id at the links at the end of the section
-	    <article id="date-here">
-                <h2>Title</h2>
-                <p class="post-meta">
-                    Published on December XX, YYYY by ...
-                </p>
-                <p>
-                    Content here!
-                </p>
-            </article>
-	   <br><br><hr style="height: 3px; border: none;  border-radius: 6px;background: linear-gradient(90deg, rgba(13, 8, 96, 1) 0%, rgba(9, 9, 121, 1) 21%, rgba(128, 128, 0, 1) 51%, rgba(255, 255, 0, 1) 100% ); " ><br><br>
+      <!-- Blog Section -->
+      <section class="section">
+        <div class="container">
+          <div class="blog-layout">
+            <div class="blog-content">
+              <!-- Blog Post 1 -->
+              <article id="2025-cryptography-and-the-quantum-problem" class="blog-post">
+                <h2>Cryptography and the Quantum Problem: Why We Need Post-Quantum Cryptography</h2>
+                <div class="post-meta">
+                  <span class="post-date">May 1, 2025</span>
+                  <span class="post-author">by<a href="https://gabrielzschmitz.github.io">Gabriel dos Santos Schmitz</a></span>
+                </div>
 
-	    -->
+                <div class="post-image">
+                  <img src="../blog/imgs/cryptography-and-the-quantum-problem/header.svg" alt="Post Header">
+                  <em>Header image by <a href="https://gabrielzschmitz.github.io">gabrielzschmitz</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons 4.0 Attribution license</a>.</em>
+                </div>
 
-     <article id="2025-cryptography-and-the-quantum-problem">
-       <h2>Cryptography and the Quantum Problem: Why We Need Post-Quantum Cryptography</h2> 
-      <p class="post-meta">
-      Published on May 1, 2025 by <a href=https://gabrielzschmitz.github.io>Gabriel dos Santos Schmitz</a>
-      </p>
+                <div class="post-content">
+                  <p>Cryptography is the cornerstone of modern digital security. From encrypted messaging to blockchain and secure web browsing, the invisible machinery of math keeps our data safe. But with the rise of quantum computing, the very foundation of today's encryption methods faces a serious threat.</p>
 
-     <!-- Adding KaTeX Rendering -->
-      <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css integrity=sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js integrity=sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6 crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js integrity=sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh crossorigin=anonymous></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!0},{left:"\\(",right:"\\)",display:!0},{left:"\\[",right:"\\]",display:!0}],throwOnError:!1})})</script>
+                  <p>Let's explore what cryptography is, how it works, and why quantum computers could break it &mdash; unless we prepare now.</p>
 
-      <img alt="Post Header" loading="lazy"
-      src="./imgs/cryptography-and-the-quantum-problem/header.svg">
-      <em>Header image by <a href=https://gabrielzschmitz.github.io>gabrielzschmitz</a>,
-        licensed under <a href=https://creativecommons.org/licenses/by/4.0/>Creative Commons 4.0 Attribution license</a>.</em></p><br><p>Cryptography is the cornerstone of modern digital security. From encrypted
-      messaging to blockchain and secure web browsing, the invisible machinery of math
-      keeps our data safe. But with the rise of quantum computing, the very foundation
-      of today’s encryption methods faces a serious threat.</p><p>Let’s explore what cryptography is, how it works, and why quantum computers
-      could break it &mdash; unless we prepare now.</p><hr><h2 id=what-is-cryptography>What Is Cryptography?<a hidden class=anchor aria-hidden=true href=#what-is-cryptography>#</a></h2><p><a href=https://en.wikipedia.org/wiki/Cryptography>Cryptography</a> is the art of
-      protecting information through <em>mathematical transformations</em>. It ensures that
-      only the intended recipient can access a message’s contents, even if others
-      intercept it.</p><p>There are two major types of cryptography:</p><ul><li><strong><a href=https://en.wikipedia.org/wiki/Symmetric-key_algorithm>Symmetric cryptography</a></strong>:
-          The same key is used to both encrypt and decrypt the message.</li><li><strong><a href=https://en.wikipedia.org/wiki/Public-key_cryptography>Asymmetric cryptography</a></strong>:
-          Uses a pair of keys &mdash; one public, one private.</li></ul><p>Cryptography underpins much more than hidden messages. It enables secure
-      communications, digital signatures, and the backbone of technologies like
-      <em>blockchain</em>, <em>e-commerce</em>, and <em>VPNs</em>.</p><hr><h2 id=a-classic-example-caesar-cipher>A Classic Example: Caesar Cipher<a hidden class=anchor aria-hidden=true href=#a-classic-example-caesar-cipher>#</a></h2><p>One of the simplest and oldest encryption techniques is the
-      <a href=https://en.wikipedia.org/wiki/Caesar_cipher>Caesar cipher</a>.</p><p>Each letter in a message is <em>shifted</em> by a fixed number of positions in the
-      alphabet.
-      For example, with a key <code>k = 3</code>:</p><p>$$
-      \texttt{A} \rightarrow \texttt{D}, \quad \texttt{B} \rightarrow \texttt{E},
-      \quad \texttt{C} \rightarrow \texttt{F}, \quad \ldots
-      $$</p><p>So the message <code>ATTACK</code> becomes <code>DWWDFN</code>.</p><p>Today, this cipher is trivially breakable &mdash; one only needs to try all 26 <code>k</code>
-      possibilities. However, it still serves as a useful introduction to basic
-      encryption concepts such as:</p><ul><li><strong>Cipher key</strong>, in this case <em>k = 3</em>;</li><li><strong>Plaintext</strong> and <strong>ciphertext</strong>, <em>ATTACK</em> and <em>DWWDFN</em> respectively.</li></ul><hr><h2 id=diffie-hellman>Diffie-Hellman<a hidden class=anchor aria-hidden=true href=#diffie-hellman>#</a></h2><p>While the Caesar cipher illustrates the basics of encryption, it lacks the
-      security needed for real-world communication. Modern systems require a way for
-      two people to establish a shared secret key &mdash; even when communicating over an
-      insecure channel.</p><p>This raises an important question:<br><strong>How can two people agree on a secret if everyone can hear their
-        conversation?</strong></p><p>This is the problem that <em>Diffie-Hellman key exchange</em> solves. It allows two
-      parties to create a <em>shared secret</em>, without ever sending the secret itself.</p><p>Historically, the Diffie-Hellman key exchange is credited to Whitfield Diffie
-      and Martin Hellman, who published it in 1976. However, Ralph Merkle also
-      contributed key ideas, and Diffie has since acknowledged him as a co-inventor.</p><p>But, to explain how this works, start with a simple analogy using <em>colors</em>.</p><ul><li>Imagine Alice and Bob want to exchange a secret.<ul><li>Alice chooses a secret color:
-              <span style=color:red;font-weight:700>red</span>.</li><li>Bob chooses a different secret color:
-              <span style=color:blue;font-weight:700>blue</span>.</li><li>They agree on a public base color:
-              <span style=color:gray;font-weight:700>gray</span>.</li></ul></li><li>Each mixes their secret color with the public one and sends the result:<ul><li>Alice sends a mixture of
-              <span style=color:#c04040;font-weight:700>red + gray</span></li><li>Bob sends a mixture of
-              <span style=color:#4040c0;font-weight:700>blue + gray</span></li></ul></li><li>Then, each mixes the received color with their own secret:<ul><li>Alice mixes
-              <span style=color:#4040c0;font-weight:700>(blue + gray)</span>
-              with
-              <span style=color:red;font-weight:700>red</span></li><li>Bob mixes
-              <span style=color:#c04040;font-weight:700>(red + gray)</span>
-              with
-              <span style=color:blue;font-weight:700>blue</span></li></ul></li><li>The final result is the same shared color &mdash;
-          <span style=color:#a02060;font-weight:700>a shared secret key</span>
-          &mdash; but anyone observing the
-          exchanged colors can&rsquo;t reconstruct it without knowing the
-          secrets.</li></ul><p><img alt="Diffie-Hellman as Colors" loading=lazy
-      src=./imgs/cryptography-and-the-quantum-problem/diffie-hellman-as-colors.png>
-      <em>Diffie-Hellman as Colors Scheme by <a href=https://gabrielzschmitz.github.io>gabrielzschmitz</a>,
-        licensed under <a href=https://creativecommons.org/licenses/by/4.0/>Creative Commons 4.0 Attribution license</a>.</em></p><hr><h2 id=turning-colors-into-numbers>Turning Colors into Numbers<a hidden class=anchor aria-hidden=true href=#turning-colors-into-numbers>#</a></h2><p>We’ll now translate the color analogy into <em>mathematical operations</em> &mdash; this
-      is where the real magic of Diffie-Hellman happens.</p><p>In the previous example, Alice and Bob created a shared color without ever
-      revealing their secret colors. The same principle can be achieved with numbers
-      using <strong>modular arithmetic</strong>, which is like working on a circular number line
-      &mdash; much like a clock.</p><p>For example:</p><p>$$
-      10 + 5 \equiv 3 \pmod{12}
-      $$</p><p>This &ldquo;modulo&rdquo; operator keeps values within a fixed range, which prevents
-      attackers from deducing secrets even when partial information is shared.</p><hr><h3 id=how-the-protocol-works>How the Protocol Works<a hidden class=anchor aria-hidden=true href=#how-the-protocol-works>#</a></h3><ol><li><p><strong>Public parameters</strong> are agreed upon:</p><ul><li>A base number <code>g</code> (generator)</li><li>A large prime number <code>p</code> (modulus)</li></ul></li><li><p>Alice and Bob choose <strong>private numbers</strong>:</p><ul><li>Alice chooses a secret number <code>a</code></li><li>Bob chooses a secret number <code>b</code></li></ul></li><li><p>They generate <strong>public values</strong> using modular exponentiation:</p></li></ol><p>$$
-      A = g^a \pmod{p}
-      $$
-      $$
-      B = g^b \pmod{p}
-      $$</p><ol start=4><li><p><strong>They exchange <code>A</code> and <code>B</code></strong> over an open channel.</p></li><li><p>They each compute the <strong>same secret key</strong>:</p></li></ol><p>$$
-      \text{Alice: } K = B^a \pmod p = g^{ba} \pmod p
-      $$
-      $$
-      \text{Bob: } K = A^b \pmod p = g^{ab} \pmod p
-      $$</p><p>as:</p><p>$$
-      g^{ab} = g^{ba}
-      $$</p><p>Both parties arrive at the same shared key &mdash; just like the shared color in the
-      metaphor &mdash; even though their private values remain hidden.</p><hr><h2 id=security-through-discrete-logarithms>Security Through Discrete Logarithms<a hidden class=anchor aria-hidden=true href=#security-through-discrete-logarithms>#</a></h2><p>Now that we’ve seen how Alice and Bob generate a shared secret, let’s explore
-      <em>why an attacker can’t just reverse the process</em>.</p><p>Even though the values <code>g</code>, <code>p</code>, <code>A</code>, and <code>B</code> are publicly visible, the attacker
-      still doesn’t know the private values <code>a</code> or <code>b</code>.</p><p>Why can’t they just compute them?</p><p>Because doing so would require solving the
-      <a href=https://en.wikipedia.org/wiki/Discrete_logarithm><strong>discrete logarithm problem</strong></a>
-      &mdash; finding <code>a</code> such that:</p><p>$$
-      A = g^a \pmod{p}
-      $$</p><p>This problem is <em>computationally hard</em> for large enough values of <code>p</code>. There’s
-      no efficient shortcut to reverse modular exponentiation without knowing the
-      secret exponent. In fact:</p><ul><li>For modern key sizes, it would take longer than the <em>age of the universe</em>
-          using today’s best classical algorithms.</li></ul><blockquote><p>“Or
-        would it?”</p></blockquote><p>This is the tipping point where classical
-      security assumptions fall apart.</p><p>Enter quantum computing.</p><hr><h2
-        id=the-quantum-problem>The Quantum Problem<a hidden class=anchor
-          aria-hidden=true href=#the-quantum-problem>#</a></h2><p
-      style=display:grid;place-items:center><img src=./imgs/cryptography-and-the-quantum-problem/computador-quantico.png alt="Quantum Computer" height=500>
-      <em><a href=https://research.ibm.com/interactive/system-one/ target=_blank>IBM Quantum System from Ehningen, Germany</a></em></p><p>Quantum computers can solve discrete logarithms <strong>exponentially faster</strong> than
-      classical ones using
-      <a href="https://en.wikipedia.org/wiki/Shor's_algorithm"><strong>Shor’s Algorithm</strong></a>.</p><p>That means encryption schemes like <em>RSA</em>, <em>Diffie-Hellman</em>, and <em>ECC</em> &mdash; the
-      bedrock of internet security &mdash; could be broken in minutes by a powerful
-      quantum machine.</p><p>Large-scale quantum computers don’t yet exist. But when they arrive, most of our
-      current cryptographic infrastructure will become obsolete.</p><hr><h2 id=why-we-need-post-quantum-cryptography>Why We Need Post-Quantum Cryptography<a hidden class=anchor aria-hidden=true href=#why-we-need-post-quantum-cryptography>#</a></h2><p><strong>Post-Quantum Cryptography (PQC)</strong> is about building encryption systems that
-      resist attacks from quantum computers.</p><p>Instead of relying on problems like factoring or discrete logs, PQC is based on:</p><ul><li><strong>Lattices</strong></li><li><strong>Hash-based constructions</strong></li><li><strong>Multivariate polynomials</strong></li><li><strong>Code-based systems</strong></li></ul><p>These problems remain hard even for quantum machines.</p><p>Institutions like
-      <a href=https://csrc.nist.gov/Projects/post-quantum-cryptography><strong>NIST</strong></a>
-      are already evaluating and standardizing PQC algorithms to ensure future-proof
-      digital security.</p><hr><h2 id=conclusion>Conclusion<a hidden class=anchor aria-hidden=true href=#conclusion>#</a></h2><p>Cryptography has come a long way &mdash; from Caesar&rsquo;s ciphers to internet-scale
-      encryption. But a new challenge looms: the quantum computer.</p><p>If we want to preserve privacy, trust, and security in the digital age, we must
-      act now to <strong>transition to post-quantum cryptography</strong>.</p><p>The future isn’t just encrypted. It’s quantum-resistant.</p><hr><h3 id=further-reading>Further Reading<a hidden class=anchor aria-hidden=true href=#further-reading>#</a></h3><ul><li><p><strong>Palomar College (2018)</strong>
-          <em>“Basic and Historical Cryptography”</em> slide set.
-          Introduces Caesar cipher as E(p,k) = (p + k) (mod 26).
-          <a href=https://www.palomar.edu/math/wp-content/uploads/sites/134/2018/09/Basic-and-Historical-Cryptography.pdf>📄 Slide Deck PDF</a></p></li><li><p><strong>Whitfield Diffie & Martin E. Hellman (1976)</strong>
-          <em>“New Directions in Cryptography,”</em> IEEE Trans. Inf. Theory 22(6): 644–654.
-          Seminal paper introducing public‐key cryptography and digital signatures.
-          <a href=https://ee.stanford.edu/~hellman/publications/24.pdf>📄 Read PDF from Stanford</a></p></li><li><p><strong>Rivest, R. L., A. Shamir & L. Adleman (1978)</strong>
-          <em>“A Method for Obtaining Digital Signatures and Public-Key Cryptosystems,”</em> Commun. ACM 21(2): 120–126.
-          Introduces the RSA algorithm and shows how to enable secure communication without prior key sharing.
-          <a href=https://people.csail.mit.edu/rivest/Rsapaper.pdf>📄 Read PDF from MIT</a></p></li><li><p><strong>Peter W. Shor (1994)</strong>
-          <em>“Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer.”</em>
-          Shows that a quantum computer can break RSA and Diffie–Hellman by factoring and computing discrete logs in polynomial time.
-          <a href=https://arxiv.org/pdf/quant-ph/9508027>📄 Read on arXiv (quant-ph/9508027)</a></p></li><li><p><strong>Leslie Lamport (1979)</strong>
-          <em>“Constructing Digital Signatures from a One-Way Function.”</em>
-          First one-time signature scheme based on hash functions — a precursor to hash-based cryptography.
-          <a href=https://www.microsoft.com/en-us/research/wp-content/uploads/2016/12/Constructing-Digital-Signatures-from-a-One-Way-Function.pdf>📄 SRI Technical Report (CSL-98)</a></p></li><li><p><strong>Oded Regev (2005)</strong>
-          <em>“On Lattices, Learning with Errors, Random Linear Codes, and Cryptography,”</em> in Proc. 37th ACM STOC.
-          Introduces the Learning With Errors (LWE) problem and a quantum-resistant public-key encryption scheme.
-          <a href=https://cims.nyu.edu/~regev/papers/qcrypto.pdf>📄 Read PDF from STOC (2005)</a></p></li><li><p><strong>Dam, D.-T. et al. (2023)</strong>
-          <em>“A Survey of Post-Quantum Cryptography: Start of a New Race,”</em> Cryptography 2023, 7(3): 40.
-          An accessible and up-to-date survey of PQC approaches, NIST candidates, and research directions.
-          <a href=https://www.mdpi.com/2410-387X/7/3/40>📄 Open-access MDPI
-            paper</a></p></li></ul><hr><p>You can read the original blog post
-             at: <a
-        href=https://gabrielzschmitz.github.io/blog/posts/cryptography-and-the-quantum-problem/post/>gabrielzschmitz.github.io</a>
-      </p><br><p>
-     </article>
+                  <hr>
 
-	   <br><br><hr style="height: 3px; border: none;  border-radius: 6px;background: linear-gradient(90deg, rgba(13, 8, 96, 1) 0%, rgba(9, 9, 121, 1) 21%, rgba(128, 128, 0, 1) 51%, rgba(255, 255, 0, 1) 100% ); " ><br><br>
+                  <h3 id="what-is-cryptography">What Is Cryptography?</h3>
 
-            <article id="2024-hybrid-in-java-part-1">
-                <h2><b>Hybrid PQC in Java: Common Pitfalls (Part 1)</b></h2>
-                <p class="post-meta">
-                    Published on August 9, 2024, updated on August 10, 2024 by Alexandre Giron
-                </p>
-		<figure>
-			<img src="imgs/pitfalls-crypto.png" alt="OpenArt AI-Generated \"Pitfalls and holes in Cryptography using a dark theme\", except for the java icon" style="border-radius: 15px; display: block;  margin-left: auto;  margin-right: auto;  width: 90%;">
-			  <figcaption>OpenArt AI-Generated "Pitfalls and holes in Cryptography using a dark theme", except for the <a href="https://www.flaticon.com/free-icons/java">java icon</a> (Freepik - Flaticon).</figcaption>
-		</figure>
-		<br>
-		<!--		<a href="https://www.flaticon.com/free-icons/java" title="java icons">Java icons created by Freepik - Flaticon</a>-->
+                  <p><a href="https://en.wikipedia.org/wiki/Cryptography">Cryptography</a> is the art of protecting information through <em>mathematical transformations</em>. It ensures that only the intended recipient can access a message's contents, even if others intercept it.</p>
 
-                <p>
-                    As part of a collaboration project with <b><a href="https://www.czertainly.com/">CZERTAINLY</a></b>, I've started a Java 
-		    <a  href="https://github.com/PQC-Group-UTFPR/hybrid-pqc-bc">repository</a> to experiment hybrid PQC. 
-		    Together with <a href="https://www.linkedin.com/in/andrei-filipim-esteves-373667322/">Andrei</a> and <a href="https://www.linkedin.com/in/danrlei-huber/">Danrlei</a> 
-		    (some of our hero's undergrad students!), we developed some examples of hybrid PQC using Bouncy Castle (1.77).
-		    <br><br>
-		    In this post, I'll explain some possible problems you might encounter, in particular if you are planning a transition to PQC with java, such as:
-		    <ul>
-                        <li>Design Architecture: how can I add hybrids in my Java application?</li>
-                        <li>Performance: it can get <em style="color: red;">3-12x worse!</em> (comparing PQ-only vs Hybrid, depending on some choices)</li>
-                    </ul>
-		    Let's start on how to develop a Hybrid KEM in Java using Bouncy Castle.
-                </p>
+                  <p>There are two major types of cryptography:</p>
 
-		<h4> Design alternatives</h4><br>
-			<p>
-			Recently, KeyFactor announced <a href="https://www.keyfactor.com/press-releases/keyfactor-announces-nist-fips-140-3-certification-for-bouncy-castle/"> FIPS 140-3 compliance</a> for Bouncy Castle, which includes post-quantum algorithms. Looking at their docs, one can plan
-			a migration as follows (considering KEMs): <br>
-			<ul>
-                        	<li>Certified version of Bouncy Castle (docs <a href="https://doc.primekey.com/bouncycastle/post-quantum-hybrid-cryptography-in-bouncy-castle/use-the-post-quantum-kems-in-fips-certified-bouncy-castle">here</a>).</li>
-                        	<li>Or use non-FIPS KEMs (docs <a href="https://doc.primekey.com/bouncycastle/post-quantum-hybrid-cryptography-in-bouncy-castle/use-the-post-quantum-kems-in-non-fips-bouncy-castle">here</a>).</li>
-                    	</ul>			
-			Regardless of the version, the recommended approach is to use a traditional algorithm (such as ECDH) with a PQC one (e.g., Kyber) as follows:
-			<br><br>
-			<ul>
-                                <li>Key Agreement (older systems): using "UserKeyingMaterialSpec" class to supply the PQC KEM secret or "DEROtherInfoClass". </li>
-                                <li>Key Agreement (newer systems):"HybridValueParameterSpec", which uses a Two-step KDF (NIST.SP.800-56C). </li>
-                                <li>Key Transport: "PQCSecretKeyProcessor". Documentation states that it combines traditional and PQC shared secrets using a XOR function. </li>
-                        </ul> 
- 			Ok, all of this are in the docs, but if we look from an implementation perspective, there is much more to deal with. 
-			Theoretically, the migration can be represented as a flow in which we start from traditional cryptography towards PQC:
-			</p>
-			<figure>
-          	              <img src="imgs/transition-flow.png" alt="PQC Transition flow" style="border-radius: 15px; display: block;  margin-left: auto;  margin-right: auto;  width: 90%;">
-	                </figure>
-			<p>
-			We could generalize each step as a different approach to the same end, which is, a way to secure our data. 
-			With <a href="https://en.wikipedia.org/wiki/Cryptographic_agility">crypto agility</a> in mind, a flexible but easy-to-switch API is desirable. In this case, the migration should not be hard to code.
-			Consider the array sorting as a quick example. The sorting strategy (quick-sort, merge-sort, etc.) is something that a computer-science student would like to switch in order to compare performance.
-			<br><br>
-			So, how can I code such a easy-to-switch API?
-			Well, there are some alternatives and in our repository we choose a pattern: <a href="https://en.wikipedia.org/wiki/Strategy_pattern"> Strategy</a>. 
-			<br><br>
-			Strategy is kind of a set of black-box methods; easy to switch between them. 
-			I know, there are cons to that, but if we want to do something like <em>traditional -> hybrid -> PQ-only </em> 
-			it means that there are three strategies to deal with. 
-			It's not that simple but this is the general idea that we select for our implementation.
-			<br><br>
-			One caveat to the Strategy pattern is that if your application is not using it maybe the refactor efforts may slow down your migration.
-			Since hybrids can be used for a while (years, decades, forever? What if it is not Java anymore? Who knows...), maybe a pattern would not be necessary.
-			<br><br>
-			Anyway, our Strategy instance contains a KEM class, and a HybridKEM class, coded in a way that you can switch between them very easily, like this:
-			</p>
-			<figure>
-          	              <img src="imgs/hybrid-example-code.png" alt="Instantiating a PQC KEM or a HybridKEM" style="border-radius: 15px; display: block;  margin-left: auto;  margin-right: auto;  width: 90%;">
-                        </figure>			
-			<p>
-			Such a design also helps to minimize the number of required configurations (we can establish defaults after the benchmarks). 
-			<br><br>
-			There is also a security concern that hybrid keys should not be used outside the "hybrid context" (to avoid downgrade attacks).
-			This concern is more critical when talking about hybrid signatures (please refer to this <a href="https://youtu.be/8PYYM3G7_GY?t=2654"> talk</a>).
-			Our design is aligned to this idea, because the operations are performed inside the hybrid class, but obviously we are dependent on the interfaces that Bouncy Castle gives and how the methods are actually used. 
-			<br><br>
-			After some initial benchmarks, we saw a performance bootleneck and that lead us to a second HybridKEM class: HybridKEMxECDH (which does not fit well in the strategy concept but we left "as-is" just for reference, or for an easy copy-and-paste example).  
-			
-			Now let's see some results.
+                  <ul>
+                    <li><strong><a href="https://en.wikipedia.org/wiki/Symmetric-key_algorithm">Symmetric cryptography</a></strong>: The same key is used to both encrypt and decrypt the message.</li>
+                    <li><strong><a href="https://en.wikipedia.org/wiki/Public-key_cryptography">Asymmetric cryptography</a></strong>: Uses a pair of keys &mdash; one public, one private.</li>
+                  </ul>
 
-			</p>
-		<br>
+                  <p>Cryptography underpins much more than hidden messages. It enables secure communications, digital signatures, and the backbone of technologies like <em>blockchain</em>, <em>e-commerce</em>, and <em>VPNs</em>.</p>
 
-		<h4> Performance</h4><br>
-                <p>
-			We selected Kyber as PQC algorithm and NIST P-curves to do the benchmark. 
-			Our setup was configured without Turbo Boost (from <a href="https://bench.cr.yp.to/supercop.html"> here</a>) and 
-			disabling other unnecessary services in a Linux system. 
-			Flag <em>-n </em> is used to generate a million iterations. The table below shows the result (considering 1M KeyGens, 1M Encaps, 1M Decaps):
-                </p>
-		<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-bghy{border-color:inherit;font-family:Arial, Helvetica, sans-serif !important;font-weight:bold;position:-webkit-sticky;
-  position:sticky;text-align:left;top:-1px;vertical-align:top;will-change:transform}
-.tg .tg-dncm{border-color:inherit;font-weight:bold;position:-webkit-sticky;position:sticky;text-align:left;top:-1px;
-  vertical-align:top;will-change:transform}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-dvpl{border-color:inherit;text-align:right;vertical-align:top}
-.tg-sort-header::-moz-selection{background:0 0}
-.tg-sort-header::selection{background:0 0}.tg-sort-header{cursor:pointer}
-.tg-sort-header:after{content:'';float:right;margin-top:7px;border-width:0 5px 5px;border-style:solid;
-  border-color:#404040 transparent;visibility:hidden}
-.tg-sort-header:hover:after{visibility:visible}
-.tg-sort-asc:after,.tg-sort-asc:hover:after,.tg-sort-desc:after{visibility:visible;opacity:.4}
-.tg-sort-desc:after{border-bottom:none;border-width:5px 5px 0}@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;}}</style>
-<div class="tg-wrap"><table id="tg-t6rGS" class="tg"><thead>
-  <tr>
-    <th class="tg-bghy">Parameter Set</th>
-    <th class="tg-dncm">Keygen/s<br>(PQ-only)</th>
-    <th class="tg-dncm">Keygen/s<br>(hybrid)</th>
-    <th class="tg-dncm">Hybrid<br>Penalty</th>
-    <th class="tg-dncm">Encaps/s<br>(PQ-only)</th>
-    <th class="tg-dncm">Encaps/s<br>(hybrid)</th>
-    <th class="tg-dncm">Hybrid<br>Penalty</th>
-    <th class="tg-dncm">Decaps/s<br>(PQ-only)</th>
-    <th class="tg-dncm">Decaps/s<br>(hybrid)</th>
-    <th class="tg-dncm">Hybrid<br>Penalty</th>
-  </tr></thead>
-<tbody>
-  <tr>
-    <td class="tg-0pky">Kyber 512</td>
-    <td class="tg-dvpl">12777.75</td>
-    <td class="tg-dvpl">4008.30</td>
-    <td class="tg-dvpl">3.18x</td>
-    <td class="tg-dvpl">12107.27</td>
-    <td class="tg-dvpl">2394.96</td>
-    <td class="tg-dvpl">5.05x</td>
-    <td class="tg-dvpl">9730.27</td>
-    <td class="tg-dvpl">2315.45</td>
-    <td class="tg-dvpl">4.20x</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">Kyber 768</td>
-    <td class="tg-dvpl">7895.65</td>
-    <td class="tg-dvpl">1643.80</td>
-    <td class="tg-dvpl">4.8x</td>
-    <td class="tg-dvpl">8092.77</td>
-    <td class="tg-dvpl">810.05</td>
-    <td class="tg-dvpl">9.99x</td>
-    <td class="tg-dvpl">6686.68</td>
-    <td class="tg-dvpl">786.28</td>
-    <td class="tg-dvpl">8.5x</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">Kyber 1024</td>
-    <td class="tg-dvpl">5150.84</td>
-    <td class="tg-dvpl">828.53</td>
-    <td class="tg-dvpl">6.21x</td>
-    <td class="tg-dvpl">5567.58</td>
-    <td class="tg-dvpl">379.02</td>
-    <td class="tg-dvpl">14.68x</td>
-    <td class="tg-dvpl">4717.69</td>
-    <td class="tg-dvpl">374.40</td>
-    <td class="tg-dvpl">12.6x</td>
-  </tr>
-</tbody></table></div>
-<script charset="utf-8">var TGSort=window.TGSort||function(n){"use strict";function r(n){return n?n.length:0}function t(n,t,e,o=0){for(e=r(n);o<e;++o)t(n[o],o)}function e(n){return n.split("").reverse().join("")}function o(n){var e=n[0];return t(n,function(n){for(;!n.startsWith(e);)e=e.substring(0,r(e)-1)}),r(e)}function u(n,r,e=[]){return t(n,function(n){r(n)&&e.push(n)}),e}var a=parseFloat;function i(n,r){return function(t){var e="";return t.replace(n,function(n,t,o){return e=t.replace(r,"")+"."+(o||"").substring(1)}),a(e)}}var s=i(/^(?:\s*)([+-]?(?:\d+)(?:,\d{3})*)(\.\d*)?$/g,/,/g),c=i(/^(?:\s*)([+-]?(?:\d+)(?:\.\d{3})*)(,\d*)?$/g,/\./g);function f(n){var t=a(n);return!isNaN(t)&&r(""+t)+1>=r(n)?t:NaN}function d(n){var e=[],o=n;return t([f,s,c],function(u){var a=[],i=[];t(n,function(n,r){r=u(n),a.push(r),r||i.push(n)}),r(i)<r(o)&&(o=i,e=a)}),r(u(o,function(n){return n==o[0]}))==r(o)?e:[]}function v(n){if("TABLE"==n.nodeName){for(var a=function(r){var e,o,u=[],a=[];return function n(r,e){e(r),t(r.childNodes,function(r){n(r,e)})}(n,function(n){"TR"==(o=n.nodeName)?(e=[],u.push(e),a.push(n)):"TD"!=o&&"TH"!=o||e.push(n)}),[u,a]}(),i=a[0],s=a[1],c=r(i),f=c>1&&r(i[0])<r(i[1])?1:0,v=f+1,p=i[f],h=r(p),l=[],g=[],N=[],m=v;m<c;++m){for(var T=0;T<h;++T){r(g)<h&&g.push([]);var C=i[m][T],L=C.textContent||C.innerText||"";g[T].push(L.trim())}N.push(m-v)}t(p,function(n,t){l[t]=0;var a=n.classList;a.add("tg-sort-header"),n.addEventListener("click",function(){var n=l[t];!function(){for(var n=0;n<h;++n){var r=p[n].classList;r.remove("tg-sort-asc"),r.remove("tg-sort-desc"),l[n]=0}}(),(n=1==n?-1:+!n)&&a.add(n>0?"tg-sort-asc":"tg-sort-desc"),l[t]=n;var i,f=g[t],m=function(r,t){return n*f[r].localeCompare(f[t])||n*(r-t)},T=function(n){var t=d(n);if(!r(t)){var u=o(n),a=o(n.map(e));t=d(n.map(function(n){return n.substring(u,r(n)-a)}))}return t}(f);(r(T)||r(T=r(u(i=f.map(Date.parse),isNaN))?[]:i))&&(m=function(r,t){var e=T[r],o=T[t],u=isNaN(e),a=isNaN(o);return u&&a?0:u?-n:a?n:e>o?n:e<o?-n:n*(r-t)});var C,L=N.slice();L.sort(m);for(var E=v;E<c;++E)(C=s[E].parentNode).removeChild(s[E]);for(E=v;E<c;++E)C.appendChild(s[v+L[E-v]])})})}}n.addEventListener("DOMContentLoaded",function(){for(var t=n.getElementsByClassName("tg"),e=0;e<r(t);++e)try{v(t[e])}catch(n){}})}(document)</script>
-		<p>
-		<br>
-		By hybrid penalty I mean the slowdown when comparing PQ-only vs hybrid. The above table shows penalties from <b> 3.18x to 12.6x</b>. Ouch! 
-		<br><br>
-		Literature shows that hybrid modes do not harm performance when considering algorithms at security level 1 (e.g., Kyber512), and reported some penalties when increasing security levels. Some examples
-		<a href="https://link.springer.com/chapter/10.1007/978-3-030-44223-1_5">here</a> and 
-		<a href="https://dl.acm.org/doi/abs/10.1145/3386367.3431305">here</a>. However, our results are much worse from what I would expect for the hybrid mode. So what's wrong? 
-		<br><br>
-		First I thought that something was wrong with the implementation, but after a quick profiling I saw this:
-		<figure>
-      	              <img src="imgs/profilingHybridKEM.png" alt="Profiling Kyber key generation (PQ-only and Hybrid)" style="border-radius: 15px; display: block;  margin-left: auto;  margin-right: auto;  width: 100%;">
-		</figure>  
-		<p>
-		AbstractECMultiplier class seems to be the bootleneck (comparing Key Generation).
-		I could not simply fix it by changing software providers (SunEC provider was  slower!). So if that performance is unacceptable,
-		then we should change our hybrid ECC component. By changing it to x25519 and X448 (curves described in RFC 7748), the hybrid penalties were reduced significantly.
-		See below:
-		</p>
-		<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-bghy{border-color:inherit;font-family:Arial, Helvetica, sans-serif !important;font-weight:bold;position:-webkit-sticky;
-  position:sticky;text-align:left;top:-1px;vertical-align:top;will-change:transform}
-.tg .tg-dncm{border-color:inherit;font-weight:bold;position:-webkit-sticky;position:sticky;text-align:left;top:-1px;
-  vertical-align:top;will-change:transform}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-dvpl{border-color:inherit;text-align:right;vertical-align:top}
-.tg-sort-header::-moz-selection{background:0 0}
-.tg-sort-header::selection{background:0 0}.tg-sort-header{cursor:pointer}
-.tg-sort-header:after{content:'';float:right;margin-top:7px;border-width:0 5px 5px;border-style:solid;
-  border-color:#404040 transparent;visibility:hidden}
-.tg-sort-header:hover:after{visibility:visible}
-.tg-sort-asc:after,.tg-sort-asc:hover:after,.tg-sort-desc:after{visibility:visible;opacity:.4}
-.tg-sort-desc:after{border-bottom:none;border-width:5px 5px 0}@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;}}</style>
-<div class="tg-wrap"><table id="tg-wL4Wi" class="tg"><thead>
-  <tr>
-    <th class="tg-bghy">Parameter Set</th>
-    <th class="tg-dncm">Keygen/s<br>(PQ-only)</th>
-    <th class="tg-dncm">Keygen/s<br>(hybrid)</th>
-    <th class="tg-dncm">Hybrid<br>Penalty</th>
-    <th class="tg-dncm">Encaps/s<br>(PQ-only)</th>
-    <th class="tg-dncm">Encaps/s<br>(hybrid)</th>
-    <th class="tg-dncm">Hybrid<br>Penalty</th>
-    <th class="tg-dncm">Decaps/s<br>(PQ-only)</th>
-    <th class="tg-dncm">Decaps/s<br>(hybrid)</th>
-    <th class="tg-dncm">Hybrid<br>Penalty</th>
-  </tr></thead>
-<tbody>
-  <tr>
-    <td class="tg-0pky">Kyber 512</td>
-    <td class="tg-dvpl">12839.11</td>
-    <td class="tg-dvpl">4943.30</td>
-    <td class="tg-dvpl">2.59x</td>
-    <td class="tg-dvpl">12199.58</td>
-    <td class="tg-dvpl">4028.76</td>
-    <td class="tg-dvpl">3.02</td>
-    <td class="tg-dvpl">9701.29</td>
-    <td class="tg-dvpl">3771.96</td>
-    <td class="tg-dvpl">2.57x</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">Kyber 768</td>
-    <td class="tg-dvpl">7982.05</td>
-    <td class="tg-dvpl">3973.29</td>
-    <td class="tg-dvpl">2.0x</td>
-    <td class="tg-dvpl">8102.80</td>
-    <td class="tg-dvpl">3473.01</td>
-    <td class="tg-dvpl">2.33x</td>
-    <td class="tg-dvpl">6770.70</td>
-    <td class="tg-dvpl">3193.44</td>
-    <td class="tg-dvpl">2.12x</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">Kyber 1024</td>
-    <td class="tg-dvpl">5188.92</td>
-    <td class="tg-dvpl">1465.73</td>
-    <td class="tg-dvpl">3.54x</td>
-    <td class="tg-dvpl">5550.62</td>
-    <td class="tg-dvpl">1245.92</td>
-    <td class="tg-dvpl">4.45x</td>
-    <td class="tg-dvpl">4715.06</td>
-    <td class="tg-dvpl">1198.32</td>
-    <td class="tg-dvpl">3.93x</td>
-  </tr>
-</tbody></table></div>
-<script charset="utf-8">var TGSort=window.TGSort||function(n){"use strict";function r(n){return n?n.length:0}function t(n,t,e,o=0){for(e=r(n);o<e;++o)t(n[o],o)}function e(n){return n.split("").reverse().join("")}function o(n){var e=n[0];return t(n,function(n){for(;!n.startsWith(e);)e=e.substring(0,r(e)-1)}),r(e)}function u(n,r,e=[]){return t(n,function(n){r(n)&&e.push(n)}),e}var a=parseFloat;function i(n,r){return function(t){var e="";return t.replace(n,function(n,t,o){return e=t.replace(r,"")+"."+(o||"").substring(1)}),a(e)}}var s=i(/^(?:\s*)([+-]?(?:\d+)(?:,\d{3})*)(\.\d*)?$/g,/,/g),c=i(/^(?:\s*)([+-]?(?:\d+)(?:\.\d{3})*)(,\d*)?$/g,/\./g);function f(n){var t=a(n);return!isNaN(t)&&r(""+t)+1>=r(n)?t:NaN}function d(n){var e=[],o=n;return t([f,s,c],function(u){var a=[],i=[];t(n,function(n,r){r=u(n),a.push(r),r||i.push(n)}),r(i)<r(o)&&(o=i,e=a)}),r(u(o,function(n){return n==o[0]}))==r(o)?e:[]}function v(n){if("TABLE"==n.nodeName){for(var a=function(r){var e,o,u=[],a=[];return function n(r,e){e(r),t(r.childNodes,function(r){n(r,e)})}(n,function(n){"TR"==(o=n.nodeName)?(e=[],u.push(e),a.push(n)):"TD"!=o&&"TH"!=o||e.push(n)}),[u,a]}(),i=a[0],s=a[1],c=r(i),f=c>1&&r(i[0])<r(i[1])?1:0,v=f+1,p=i[f],h=r(p),l=[],g=[],N=[],m=v;m<c;++m){for(var T=0;T<h;++T){r(g)<h&&g.push([]);var C=i[m][T],L=C.textContent||C.innerText||"";g[T].push(L.trim())}N.push(m-v)}t(p,function(n,t){l[t]=0;var a=n.classList;a.add("tg-sort-header"),n.addEventListener("click",function(){var n=l[t];!function(){for(var n=0;n<h;++n){var r=p[n].classList;r.remove("tg-sort-asc"),r.remove("tg-sort-desc"),l[n]=0}}(),(n=1==n?-1:+!n)&&a.add(n>0?"tg-sort-asc":"tg-sort-desc"),l[t]=n;var i,f=g[t],m=function(r,t){return n*f[r].localeCompare(f[t])||n*(r-t)},T=function(n){var t=d(n);if(!r(t)){var u=o(n),a=o(n.map(e));t=d(n.map(function(n){return n.substring(u,r(n)-a)}))}return t}(f);(r(T)||r(T=r(u(i=f.map(Date.parse),isNaN))?[]:i))&&(m=function(r,t){var e=T[r],o=T[t],u=isNaN(e),a=isNaN(o);return u&&a?0:u?-n:a?n:e>o?n:e<o?-n:n*(r-t)});var C,L=N.slice();L.sort(m);for(var E=v;E<c;++E)(C=s[E].parentNode).removeChild(s[E]);for(E=v;E<c;++E)C.appendChild(s[v+L[E-v]])})})}}n.addEventListener("DOMContentLoaded",function(){for(var t=n.getElementsByClassName("tg"),e=0;e<r(t);++e)try{v(t[e])}catch(n){}})}(document)</script>
-		
-		<br>
-		
- 		<p>
-		As expected, such a change improved performance for the hybrid mode. One can also use the <a href="https://github.com/bcgit/bc-java/blob/main/core/src/test/java/org/bouncycastle/math/ec/rfc7748/test/X25519Test.java">x25519 interface</a> directly, 
-		perhaps the performance could be further improved that way. 
-		Therefore, x25519 is a better choice for the hybrid.
-		<br><br>
-		Some details are missing, such as the KDF instances that we use (but I don't think they would change the results). 
-		Also, we map x25519 with Kyber512 <em> and </em> Kyber768, because there is no level-3 equivalent (differently from NIST P-384).
-		Nevertheless, it seems that Kyber768 with x25519 will be used as default: examples
-		<a href="https://eprint.iacr.org/2024/039"> here</a> and
-		<a href="https://datatracker.ietf.org/doc/draft-tls-westerbaan-xyber768d00/"> here</a>.
+                  <hr>
 
-		<br><br>
-		In conclusion, there are some pitfalls in the choices for the algorithms and the design architecture when you migrate your java application.
-		Hopefully this post might help you avoid some of them. For the next post, we'll see some performance results when using hybrid signatures. Thanks! 
-		</p>
-		
-            </article>
-	    
-	   <br><br><hr style="height: 3px; border: none;  border-radius: 6px;background: linear-gradient(90deg, rgba(13, 8, 96, 1) 0%, rgba(9, 9, 121, 1) 21%, rgba(128, 128, 0, 1) 51%, rgba(255, 255, 0, 1) 100% ); " ><br><br>
+                  <h3 id="a-classic-example-caesar-cipher">A Classic Example: Caesar Cipher</h3>
 
-            
+                  <p>One of the simplest and oldest encryption techniques is the <a href="https://en.wikipedia.org/wiki/Caesar_cipher">Caesar cipher</a>.</p>
 
+                  <p>Each letter in a message is <em>shifted</em> by a fixed number of positions in the alphabet. For example, with a key <code>k = 3</code>:</p>
 
+                  <p>$$\texttt{A} \rightarrow \texttt{D}, \quad \texttt{B} \rightarrow \texttt{E}, \quad \texttt{C} \rightarrow \texttt{F}, \quad \ldots$$</p>
 
-  
-            <article id="2024-first-post"> 
-                <h2>Group's First Anniversary</h2> 
-                <p class="post-meta"> 
-                    Written on July 30, 2024 by Alexandre Giron 
-                </p> 
-                <p> 
-		    The <i>"Grupo de Pesquisa Criptografia Pós-Quântica - UTFPR"</i> was created in March, 2023. 
-		    The primary goal is to gather people interested in studying concepts, applications and adoption strategies, 
-		    focusing on the development and evaluation of Post-Quantum Cryptography (PQC). Other topics also belongs to the group's interest.
-		    <br>
-		    <br>
-		    Being the group's coordinator, I would like to thank to the hero students that have been studying, attending meetings 
-		    and starting research in order to achieve the group's primary goal.
+                  <p>So the message <code>ATTACK</code> becomes <code>DWWDFN</code>.</p>
 
-		    After one year of activities, we have started partnerships* and collaborations that are (hopefully!) promising!
-		    <ul>
-  			<li><a href="https://www.czertainly.com/">CZERTAINLY </a></li>
-  			<li><a href="https://www.dinamonetworks.com/">Dinamo Networks </a></li>
-		    </ul> 
-		    <i>PS*: not necessarily related to PQC.</i><br><br>
+                  <p>Today, this cipher is trivially breakable &mdash; one only needs to try all 26 <code>k</code> possibilities. However, it still serves as a useful introduction to basic encryption concepts such as:</p>
 
-		    Obviously we are still at our "baby steps" stage. But we hope to contribute and we welcome new collaborations!
-                </p> 
-            </article> 
-	   <br><br><hr style="height: 3px; border: none;  border-radius: 6px;background: linear-gradient(90deg, rgba(13, 8, 96, 1) 0%, rgba(9, 9, 121, 1) 21%, rgba(128, 128, 0, 1) 51%, rgba(255, 255, 0, 1) 100% ); " ><br><br>
+                  <ul>
+                    <li><strong>Cipher key</strong>, in this case <em>k = 3</em>;</li>
+                    <li><strong>Plaintext</strong> and <strong>ciphertext</strong>, <em>ATTACK</em> and <em>DWWDFN</em> respectively.</li>
+                  </ul>
 
-        </main> 
-  	</div>
+                  <hr>
 
+                  <h3 id="diffie-hellman">Diffie-Hellman</h3>
 
+                  <p>While the Caesar cipher illustrates the basics of encryption, it lacks the security needed for real-world communication. Modern systems require a way for two people to establish a shared secret key &mdash; even when communicating over an insecure channel.</p>
 
+                  <p>This raises an important question:<br><strong>How can two people agree on a secret if everyone can hear their conversation?</strong></p>
 
+                  <p>This is the problem that <em>Diffie-Hellman key exchange</em> solves. It allows two parties to create a <em>shared secret</em>, without ever sending the secret itself.</p>
 
- <div class="col-sm-12 col-md-4 ">
-        <aside> 
-            <h2>Blog Posts</h2> 
-            <ul> 
-<!--		Copy using the most-recent fashion
-                <li><a href="#date-here">Title</a></li> -->
-                <li><a href="#2025-cryptography-and-the-quantum-problem">
-                    Cryptography and the Quantum Problem: Why We Need Post-Quantum Cryptography</a>
-                </li> 
-                <li><a href="#2024-hybrid-in-java-part-1">Hybrid PQC in Java: Common Pitfalls (Part 1) </a></li> 
-                <li><a href="#2024-first-post">Group's First Anniversary</a></li> 
-            </ul> 
-        </aside> 
-  	</div>
-  	</div>
-  	</div>
+                  <p>Historically, the Diffie-Hellman key exchange is credited to Whitfield Diffie and Martin Hellman, who published it in 1976. However, Ralph Merkle also contributed key ideas, and Diffie has since acknowledged him as a co-inventor.</p>
 
+                  <p>But, to explain how this works, start with a simple analogy using <em>colors</em>.</p>
 
+                  <ul>
+                    <li>Imagine Alice and Bob want to exchange a secret.
+                      <ul>
+                        <li>Alice chooses a secret color: <span style="color:red;font-weight:700">red</span>.</li>
+                        <li>Bob chooses a different secret color: <span style="color:blue;font-weight:700">blue</span>.</li>
+                        <li>They agree on a public base color: <span style="color:gray;font-weight:700">gray</span>.</li>
+                      </ul>
+                    </li>
+                    <li>Each mixes their secret color with the public one and sends the result:
+                      <ul>
+                        <li>Alice sends a mixture of <span style="color:#c04040;font-weight:700">red + gray</span></li>
+                        <li>Bob sends a mixture of <span style="color:#4040c0;font-weight:700">blue + gray</span></li>
+                      </ul>
+                    </li>
+                    <li>Then, each mixes the received color with their own secret:
+                      <ul>
+                        <li>Alice mixes <span style="color:#4040c0;font-weight:700">(blue + gray)</span> with <span style="color:red;font-weight:700">red</span></li>
+                        <li>Bob mixes <span style="color:#c04040;font-weight:700">(red + gray)</span> with <span style="color:blue;font-weight:700">blue</span></li>
+                      </ul>
+                    </li>
+                    <li>The final result is the same shared color &mdash; <span style="color:#a02060;font-weight:700">a shared secret key</span> &mdash; but anyone observing the exchanged colors can&rsquo;t reconstruct it without knowing the secrets.</li>
+                  </ul>
 
-    </section>
+                  <div class="post-image">
+                    <img src="../blog/imgs/cryptography-and-the-quantum-problem/diffie-hellman-as-colors.png" alt="Diffie-Hellman as Colors">
+                    <em>Diffie-Hellman as Colors Scheme by <a href="https://gabrielzschmitz.github.io">gabrielzschmitz</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons 4.0 Attribution license</a>.</em>
+                  </div>
 
+                  <hr>
 
+                  <h3 id="turning-colors-into-numbers">Turning Colors into Numbers</h3>
 
+                  <p>We'll now translate the color analogy into <em>mathematical operations</em> &mdash; this is where the real magic of Diffie-Hellman happens.</p>
 
+                  <p>In the previous example, Alice and Bob created a shared color without ever revealing their secret colors. The same principle can be achieved with numbers using <strong>modular arithmetic</strong>, which is like working on a circular number line &mdash; much like a clock.</p>
 
+                  <p>For example:</p>
 
+                  <p>$$10 + 5 \equiv 3 \pmod{12}$$</p>
 
+                  <p>This &ldquo;modulo&rdquo; operator keeps values within a fixed range, which prevents attackers from deducing secrets even when partial information is shared.</p>
 
+                  <hr>
 
-  <!-- info section -->
-  <section class="info_section layout_padding2">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-lg-3 info-col">
-          <div class="info_detail">
-            <h4>
-              Grupo PQC UTFPR
-            </h4>
-            <p>
-              Registered at the Federal University of Technology - Parana (UTFPR), Toledo Campus. Cristo Rei Street, 19 CEP 85902-490 Toledo-PR, Brazil
-              </p>
+                  <h4 id="how-the-protocol-works">How the Protocol Works</h4>
+
+                  <ol>
+                    <li>
+                      <p><strong>Public parameters</strong> are agreed upon:</p>
+                      <ul>
+                        <li>A base number <code>g</code> (generator)</li>
+                        <li>A large prime number <code>p</code> (modulus)</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <p>Alice and Bob choose <strong>private numbers</strong>:</p>
+                      <ul>
+                        <li>Alice chooses a secret number <code>a</code></li>
+                        <li>Bob chooses a secret number <code>b</code></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <p>They generate <strong>public values</strong> using modular exponentiation:</p>
+                    </li>
+                  </ol>
+
+                  <p>$$A = g^a \pmod{p}$$</p>
+                  <p>$$B = g^b \pmod{p}$$</p>
+
+                  <ol start="4">
+                    <li><p><strong>They exchange <code>A</code> and <code>B</code></strong> over an open channel.</p></li>
+                    <li><p>They each compute the <strong>same secret key</strong>:</p></li>
+                  </ol>
+
+                  <p>$$\text{Alice: } K = B^a \pmod p = g^{ba} \pmod p$$</p>
+                  <p>$$\text{Bob: } K = A^b \pmod p = g^{ab} \pmod p$$</p>
+
+                  <p>as:</p>
+
+                  <p>$$g^{ab} = g^{ba}$$</p>
+
+                  <p>Both parties arrive at the same shared key &mdash; just like the shared color in the metaphor &mdash; even though their private values remain hidden.</p>
+
+                  <hr>
+
+                  <h3 id="security-through-discrete-logarithms">Security Through Discrete Logarithms</h3>
+
+                  <p>Now that we've seen how Alice and Bob generate a shared secret, let's explore <em>why an attacker can't just reverse the process</em>.</p>
+
+                  <p>Even though the values <code>g</code>, <code>p</code>, <code>A</code>, and <code>B</code> are publicly visible, the attacker still doesn't know the private values <code>a</code> or <code>b</code>.</p>
+
+                  <p>Why can't they just compute them?</p>
+
+                  <p>Because doing so would require solving the <a href="https://en.wikipedia.org/wiki/Discrete_logarithm"><strong>discrete logarithm problem</strong></a> &mdash; finding <code>a</code> such that:</p>
+
+                  <p>$$A = g^a \pmod{p}$$</p>
+
+                  <p>This problem is <em>computationally hard</em> for large enough values of <code>p</code>. There's no efficient shortcut to reverse modular exponentiation without knowing the secret exponent. In fact:</p>
+
+                  <ul>
+                    <li>For modern key sizes, it would take longer than the <em>age of the universe</em> using today's best classical algorithms.</li>
+                  </ul>
+
+                  <blockquote>
+                    <p>"Or would it?"</p>
+                  </blockquote>
+
+                  <p>This is the tipping point where classical security assumptions fall apart.</p>
+
+                  <p>Enter quantum computing.</p>
+
+                  <hr>
+
+                  <h3 id="the-quantum-problem">The Quantum Problem</h3>
+
+                  <div class="post-image">
+                    <img src="../blog/imgs/cryptography-and-the-quantum-problem/computador-quantico.png" alt="Quantum Computer" style="height: 500px;">
+                    <em><a href="https://research.ibm.com/interactive/system-one/" target="_blank">IBM Quantum System from Ehningen, Germany</a></em>
+                  </div>
+
+                  <p>Quantum computers can solve discrete logarithms <strong>exponentially faster</strong> than classical ones using <a href="https://en.wikipedia.org/wiki/Shor's_algorithm"><strong>Shor's Algorithm</strong></a>.</p>
+
+                  <p>That means encryption schemes like <em>RSA</em>, <em>Diffie-Hellman</em>, and <em>ECC</em> &mdash; the bedrock of internet security &mdash; could be broken in minutes by a powerful quantum machine.</p>
+
+                  <p>Large-scale quantum computers don't yet exist. But when they arrive, most of our current cryptographic infrastructure will become obsolete.</p>
+
+                  <hr>
+
+                  <h3 id="why-we-need-post-quantum-cryptography">Why We Need Post-Quantum Cryptography</h3>
+
+                  <p><strong>Post-Quantum Cryptography (PQC)</strong> is about building encryption systems that resist attacks from quantum computers.</p>
+
+                  <p>Instead of relying on problems like factoring or discrete logs, PQC is based on:</p>
+
+                  <ul>
+                    <li><strong>Lattices</strong></li>
+                    <li><strong>Hash-based constructions</strong></li>
+                    <li><strong>Multivariate polynomials</strong></li>
+                    <li><strong>Code-based systems</strong></li>
+                  </ul>
+
+                  <p>These problems remain hard even for quantum machines.</p>
+
+                  <p>Institutions like <a href="https://csrc.nist.gov/Projects/post-quantum-cryptography"><strong>NIST</strong></a> are already evaluating and standardizing PQC algorithms to ensure future-proof digital security.</p>
+
+                  <hr>
+
+                  <h3 id="conclusion">Conclusion</h3>
+
+                  <p>Cryptography has come a long way &mdash; from Caesar&rsquo;s ciphers to internet-scale encryption. But a new challenge looms: the quantum computer.</p>
+
+                  <p>If we want to preserve privacy, trust, and security in the digital age, we must act now to <strong>transition to post-quantum cryptography</strong>.</p>
+
+                  <p>The future isn't just encrypted. It's quantum-resistant.</p>
+
+                  <hr>
+
+                  <h4 id="further-reading">Further Reading</h4>
+
+                  <ul>
+                    <li>
+                      <p><strong>Palomar College (2018)</strong> <em>"Basic and Historical Cryptography"</em> slide set. Introduces Caesar cipher as E(p,k) = (p + k) (mod 26). <a href="https://www.palomar.edu/math/wp-content/uploads/sites/134/2018/09/Basic-and-Historical-Cryptography.pdf">📄 Slide Deck PDF</a></p>
+                    </li>
+                    <li>
+                      <p><strong>Whitfield Diffie & Martin E. Hellman (1976)</strong> <em>"New Directions in Cryptography,"</em> IEEE Trans. Inf. Theory 22(6): 644–654. Seminal paper introducing public‐key cryptography and digital signatures. <a href="https://ee.stanford.edu/~hellman/publications/24.pdf">📄 Read PDF from Stanford</a></p>
+                    </li>
+                    <li>
+                      <p><strong>Rivest, R. L., A. Shamir & L. Adleman (1978)</strong> <em>"A Method for Obtaining Digital Signatures and Public-Key Cryptosystems,"</em> Commun. ACM 21(2): 120–126. Introduces the RSA algorithm and shows how to enable secure communication without prior key sharing. <a href="https://people.csail.mit.edu/rivest/Rsapaper.pdf">📄 Read PDF from MIT</a></p>
+                    </li>
+                    <li>
+                      <p><strong>Peter W. Shor (1994)</strong> <em>"Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer."</em> Shows that a quantum computer can break RSA and Diffie–Hellman by factoring and computing discrete logs in polynomial time. <a href="https://arxiv.org/pdf/quant-ph/9508027">📄 Read on arXiv (quant-ph/9508027)</a></p>
+                    </li>
+                    <li>
+                      <p><strong>Leslie Lamport (1979)</strong> <em>"Constructing Digital Signatures from a One-Way Function."</em> First one-time signature scheme based on hash functions — a precursor to hash-based cryptography. <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/12/Constructing-Digital-Signatures-from-a-One-Way-Function.pdf">📄 SRI Technical Report (CSL-98)</a></p>
+                    </li>
+                    <li>
+                      <p><strong>Oded Regev (2005)</strong> <em>"On Lattices, Learning with Errors, Random Linear Codes, and Cryptography,"</em> in Proc. 37th ACM STOC. Introduces the Learning With Errors (LWE) problem and a quantum-resistant public-key encryption scheme. <a href="https://cims.nyu.edu/~regev/papers/qcrypto.pdf">📄 Read PDF from STOC (2005)</a></p>
+                    </li>
+                    <li>
+                      <p><strong>Dam, D.-T. et al. (2023)</strong> <em>"A Survey of Post-Quantum Cryptography: Start of a New Race,"</em> Cryptography 2023, 7(3): 40. An accessible and up-to-date survey of PQC approaches, NIST candidates, and research directions. <a href="https://www.mdpi.com/2410-387X/7/3/40">📄 Open-access MDPI paper</a></p>
+                    </li>
+                  </ul>
+
+                  <hr>
+
+                  <p>You can read the original blog post at: <a href="https://gabrielzschmitz.github.io/blog/posts/cryptography-and-the-quantum-problem/post/">gabrielzschmitz.github.io</a></p>
+                </div>
+              </article>
+
+              <div class="post-divider"></div>
+
+              <!-- Blog Post 2 -->
+              <article id="2024-hybrid-in-java-part-1" class="blog-post">
+                <h2>Hybrid PQC in Java: Common Pitfalls (Part 1)</h2>
+                <div class="post-meta">
+                  <span class="post-date">August 9, 2024</span>
+                  <span class="post-update">Updated on August 10, 2024</span>
+                  <span class="post-author">by Alexandre Giron</span>
+                </div>
+
+                <div class="post-image">
+                  <img src="../blog/imgs/pitfalls-crypto.png" alt="OpenArt AI-Generated 'Pitfalls and holes in Cryptography using a dark theme', except for the java icon">
+                  <em>OpenArt AI-Generated "Pitfalls and holes in Cryptography using a dark theme", except for the <a href="https://www.flaticon.com/free-icons/java">java icon</a> (Freepik - Flaticon).</em>
+                </div>
+
+                <div class="post-content">
+                  <p>As part of a collaboration project with <b><a href="https://www.czertainly.com/">CZERTAINLY</a></b>, I've started a Java <a href="https://github.com/PQC-Group-UTFPR/hybrid-pqc-bc">repository</a> to experiment hybrid PQC. Together with <a href="https://www.linkedin.com/in/andrei-filipim-esteves-373667322/">Andrei</a> and <a href="https://www.linkedin.com/in/danrlei-huber/">Danrlei</a> (some of our hero's undergrad students!), we developed some examples of hybrid PQC using Bouncy Castle (1.77).</p>
+
+                  <p>In this post, I'll explain some possible problems you might encounter, in particular if you are planning a transition to PQC with java, such as:</p>
+
+                  <ul>
+                    <li>Design Architecture: how can I add hybrids in my Java application?</li>
+                    <li>Performance: it can get <em style="color: red;">3-12x worse!</em> (comparing PQ-only vs Hybrid, depending on some choices)</li>
+                  </ul>
+
+                  <p>Let's start on how to develop a Hybrid KEM in Java using Bouncy Castle.</p>
+
+                  <h4>Design alternatives</h4>
+
+                  <p>Recently, KeyFactor announced <a href="https://www.keyfactor.com/press-releases/keyfactor-announces-nist-fips-140-3-certification-for-bouncy-castle/">FIPS 140-3 compliance</a> for Bouncy Castle, which includes post-quantum algorithms. Looking at their docs, one can plan a migration as follows (considering KEMs):</p>
+
+                  <ul>
+                    <li>Certified version of Bouncy Castle (docs <a href="https://doc.primekey.com/bouncycastle/post-quantum-hybrid-cryptography-in-bouncy-castle/use-the-post-quantum-kems-in-fips-certified-bouncy-castle">here</a>).</li>
+                    <li>Or use non-FIPS KEMs (docs <a href="https://doc.primekey.com/bouncycastle/post-quantum-hybrid-cryptography-in-bouncy-castle/use-the-post-quantum-kems-in-non-fips-bouncy-castle">here</a>).</li>
+                  </ul>
+
+                  <p>Regardless of the version, the recommended approach is to use a traditional algorithm (such as ECDH) with a PQC one (e.g., Kyber) as follows:</p>
+
+                  <ul>
+                    <li>Key Agreement (older systems): using "UserKeyingMaterialSpec" class to supply the PQC KEM secret or "DEROtherInfoClass".</li>
+                    <li>Key Agreement (newer systems):"HybridValueParameterSpec", which uses a Two-step KDF (NIST.SP.800-56C).</li>
+                    <li>Key Transport: "PQCSecretKeyProcessor". Documentation states that it combines traditional and PQC shared secrets using a XOR function.</li>
+                  </ul>
+
+                  <p>Ok, all of this are in the docs, but if we look from an implementation perspective, there is much more to deal with. Theoretically, the migration can be represented as a flow in which we start from traditional cryptography towards PQC:</p>
+
+                  <div class="post-image">
+                    <img src="../blog/imgs/transition-flow.png" alt="PQC Transition flow">
+                  </div>
+
+                  <p>We could generalize each step as a different approach to the same end, which is, a way to secure our data. With <a href="https://en.wikipedia.org/wiki/Cryptographic_agility">crypto agility</a> in mind, a flexible but easy-to-switch API is desirable. In this case, the migration should not be hard to code. Consider the array sorting as a quick example. The sorting strategy (quick-sort, merge-sort, etc.) is something that a computer-science student would like to switch in order to compare performance.</p>
+
+                  <p>So, how can I code such a easy-to-switch API? Well, there are some alternatives and in our repository we choose a pattern: <a href="https://en.wikipedia.org/wiki/Strategy_pattern">Strategy</a>.</p>
+
+                  <p>Strategy is kind of a set of black-box methods; easy to switch between them. I know, there are cons to that, but if we want to do something like <em>traditional -> hybrid -> PQ-only</em> it means that there are three strategies to deal with. It's not that simple but this is the general idea that we select for our implementation.</p>
+
+                  <p>One caveat to the Strategy pattern is that if your application is not using it maybe the refactor efforts may slow down your migration. Since hybrids can be used for a while (years, decades, forever? What if it is not Java anymore? Who knows...), maybe a pattern would not be necessary.</p>
+
+                  <p>Anyway, our Strategy instance contains a KEM class, and a HybridKEM class, coded in a way that you can switch between them very easily, like this:</p>
+
+                  <div class="post-image">
+                    <img src="../blog/imgs/hybrid-example-code.png" alt="Instantiating a PQC KEM or a HybridKEM">
+                  </div>
+
+                  <p>Such a design also helps to minimize the number of required configurations (we can establish defaults after the benchmarks).</p>
+
+                  <p>There is also a security concern that hybrid keys should not be used outside the "hybrid context" (to avoid downgrade attacks). This concern is more critical when talking about hybrid signatures (please refer to this <a href="https://youtu.be/8PYYM3G7_GY?t=2654">talk</a>). Our design is aligned to this idea, because the operations are performed inside the hybrid class, but obviously we are dependent on the interfaces that Bouncy Castle gives and how the methods are actually used.</p>
+
+                  <p>After some initial benchmarks, we saw a performance bootleneck and that lead us to a second HybridKEM class: HybridKEMxECDH (which does not fit well in the strategy concept but we left "as-is" just for reference, or for an easy copy-and-paste example).</p>
+
+                  <p>Now let's see some results.</p>
+
+                  <h4>Performance</h4>
+
+                  <p>We selected Kyber as PQC algorithm and NIST P-curves to do the benchmark. Our setup was configured without Turbo Boost (from <a href="https://bench.cr.yp.to/supercop.html">here</a>) and disabling other unnecessary services in a Linux system. Flag <em>-n</em> is used to generate a million iterations. The table below shows the result (considering 1M KeyGens, 1M Encaps, 1M Decaps):</p>
+
+                  <div class="table-responsive">
+                    <table class="performance-table">
+                      <thead>
+                        <tr>
+                          <th>Parameter Set</th>
+                          <th>Keygen/s<br>(PQ-only)</th>
+                          <th>Keygen/s<br>(hybrid)</th>
+                          <th>Hybrid<br>Penalty</th>
+                          <th>Encaps/s<br>(PQ-only)</th>
+                          <th>Encaps/s<br>(hybrid)</th>
+                          <th>Hybrid<br>Penalty</th>
+                          <th>Decaps/s<br>(PQ-only)</th>
+                          <th>Decaps/s<br>(hybrid)</th>
+                          <th>Hybrid<br>Penalty</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Kyber 512</td>
+                          <td class="text-right">12777.75</td>
+                          <td class="text-right">4008.30</td>
+                          <td class="text-right">3.18x</td>
+                          <td class="text-right">12107.27</td>
+                          <td class="text-right">2394.96</td>
+                          <td class="text-right">5.05x</td>
+                          <td class="text-right">9730.27</td>
+                          <td class="text-right">2315.45</td>
+                          <td class="text-right">4.20x</td>
+                        </tr>
+                        <tr>
+                          <td>Kyber 768</td>
+                          <td class="text-right">7895.65</td>
+                          <td class="text-right">1643.80</td>
+                          <td class="text-right">4.8x</td>
+                          <td class="text-right">8092.77</td>
+                          <td class="text-right">810.05</td>
+                          <td class="text-right">9.99x</td>
+                          <td class="text-right">6686.68</td>
+                          <td class="text-right">786.28</td>
+                          <td class="text-right">8.5x</td>
+                        </tr>
+                        <tr>
+                          <td>Kyber 1024</td>
+                          <td class="text-right">5150.84</td>
+                          <td class="text-right">828.53</td>
+                          <td class="text-right">6.21x</td>
+                          <td class="text-right">5567.58</td>
+                          <td class="text-right">379.02</td>
+                          <td class="text-right">14.68x</td>
+                          <td class="text-right">4717.69</td>
+                          <td class="text-right">374.40</td>
+                          <td class="text-right">12.6x</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <p>By hybrid penalty I mean the slowdown when comparing PQ-only vs hybrid. The above table shows penalties from <b>3.18x to 12.6x</b>. Ouch!</p>
+
+                  <p>Literature shows that hybrid modes do not harm performance when considering algorithms at security level 1 (e.g., Kyber512), and reported some penalties when increasing security levels. Some examples <a href="https://link.springer.com/chapter/10.1007/978-3-030-44223-1_5">here</a> and <a href="https://dl.acm.org/doi/abs/10.1145/3386367.3431305">here</a>. However, our results are much worse from what I would expect for the hybrid mode. So what's wrong?</p>
+
+                  <p>First I thought that something was wrong with the implementation, but after a quick profiling I saw this:</p>
+
+                  <div class="post-image">
+                    <img src="../blog/imgs/profilingHybridKEM.png" alt="Profiling Kyber key generation (PQ-only and Hybrid)">
+                  </div>
+
+                  <p>AbstractECMultiplier class seems to be the bootleneck (comparing Key Generation). I could not simply fix it by changing software providers (SunEC provider was slower!). So if that performance is unacceptable, then we should change our hybrid ECC component. By changing it to x25519 and X448 (curves described in RFC 7748), the hybrid penalties were reduced significantly. See below:</p>
+
+                  <div class="table-responsive">
+                    <table class="performance-table">
+                      <thead>
+                        <tr>
+                          <th>Parameter Set</th>
+                          <th>Keygen/s<br>(PQ-only)</th>
+                          <th>Keygen/s<br>(hybrid)</th>
+                          <th>Hybrid<br>Penalty</th>
+                          <th>Encaps/s<br>(PQ-only)</th>
+                          <th>Encaps/s<br>(hybrid)</th>
+                          <th>Hybrid<br>Penalty</th>
+                          <th>Decaps/s<br>(PQ-only)</th>
+                          <th>Decaps/s<br>(hybrid)</th>
+                          <th>Hybrid<br>Penalty</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Kyber 512</td>
+                          <td class="text-right">12839.11</td>
+                          <td class="text-right">4943.30</td>
+                          <td class="text-right">2.59x</td>
+                          <td class="text-right">12199.58</td>
+                          <td class="text-right">4028.76</td>
+                          <td class="text-right">3.02</td>
+                          <td class="text-right">9701.29</td>
+                          <td class="text-right">3771.96</td>
+                          <td class="text-right">2.57x</td>
+                        </tr>
+                        <tr>
+                          <td>Kyber 768</td>
+                          <td class="text-right">7982.05</td>
+                          <td class="text-right">3973.29</td>
+                          <td class="text-right">2.0x</td>
+                          <td class="text-right">8102.80</td>
+                          <td class="text-right">3473.01</td>
+                          <td class="text-right">2.33x</td>
+                          <td class="text-right">6770.70</td>
+                          <td class="text-right">3193.44</td>
+                          <td class="text-right">2.12x</td>
+                        </tr>
+                        <tr>
+                          <td>Kyber 1024</td>
+                          <td class="text-right">5188.92</td>
+                          <td class="text-right">1465.73</td>
+                          <td class="text-right">3.54x</td>
+                          <td class="text-right">5550.62</td>
+                          <td class="text-right">1245.92</td>
+                          <td class="text-right">4.45x</td>
+                          <td class="text-right">4715.06</td>
+                          <td class="text-right">1198.32</td>
+                          <td class="text-right">3.93x</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <p>As expected, such a change improved performance for the hybrid mode. One can also use the <a href="https://github.com/bcgit/bc-java/blob/main/core/src/test/java/org/bouncycastle/math/ec/rfc7748/test/X25519Test.java">x25519 interface</a> directly, perhaps the performance could be further improved that way. Therefore, x25519 is a better choice for the hybrid.</p>
+
+                  <p>Some details are missing, such as the KDF instances that we use (but I don't think they would change the results). Also, we map x25519 with Kyber512 <em>and</em> Kyber768, because there is no level-3 equivalent (differently from NIST P-384). Nevertheless, it seems that Kyber768 with x25519 will be used as default: examples <a href="https://eprint.iacr.org/2024/039">here</a> and <a href="https://datatracker.ietf.org/doc/draft-tls-westerbaan-xyber768d00/">here</a>.</p>
+
+                  <p>In conclusion, there are some pitfalls in the choices for the algorithms and the design architecture when you migrate your java application. Hopefully this post might help you avoid some of them. For the next post, we'll see some performance results when using hybrid signatures. Thanks!</p>
+                </div>
+              </article>
+
+              <div class="post-divider"></div>
+
+              <!-- Blog Post 3 -->
+              <article id="2024-first-post" class="blog-post">
+                <h2>Group's First Anniversary</h2>
+                <div class="post-meta">
+                  <span class="post-date">July 30, 2024</span>
+                  <span class="post-author">by Alexandre Giron</span>
+                </div>
+
+                <div class="post-content">
+                  <p>The <i>"Grupo de Pesquisa Criptografia Pós-Quântica - UTFPR"</i> was created in March, 2023. The primary goal is to gather people interested in studying concepts, applications and adoption strategies, focusing on the development and evaluation of Post-Quantum Cryptography (PQC). Other topics also belongs to the group's interest.</p>
+
+                  <p>Being the group's coordinator, I would like to thank to the hero students that have been studying, attending meetings and starting research in order to achieve the group's primary goal.</p>
+
+                  <p>After one year of activities, we have started partnerships* and collaborations that are (hopefully!) promising!</p>
+
+                  <ul>
+                    <li><a href="https://www.czertainly.com/">CZERTAINLY</a></li>
+                    <li><a href="https://www.dinamonetworks.com/">Dinamo Networks</a></li>
+                  </ul>
+
+                  <p><i>PS*: not necessarily related to PQC.</i></p>
+
+                  <p>Obviously we are still at our "baby steps" stage. But we hope to contribute and we welcome new collaborations!</p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="blog-sidebar">
+              <div class="sidebar-container">
+                <h3>Blog Posts</h3>
+                <ul class="sidebar-nav">
+                  <li>
+                    <a href="#2025-cryptography-and-the-quantum-problem" class="sidebar-link">
+                      <span class="sidebar-link-text">Cryptography and the Quantum Problem: Why We Need Post-Quantum Cryptography</span>
+                      <span class="sidebar-link-date">May 1, 2025</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#2024-hybrid-in-java-part-1" class="sidebar-link">
+                      <span class="sidebar-link-text">Hybrid PQC in Java: Common Pitfalls (Part 1)</span>
+                      <span class="sidebar-link-date">Aug 9, 2024</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#2024-first-post" class="sidebar-link">
+                      <span class="sidebar-link-text">Group's First Anniversary</span>
+                      <span class="sidebar-link-date">Jul 30, 2024</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3 info-col">
-        <div class="map_container">
-              
-             <!-- <div class="img-box">
-                <img src="../images/UTFPR-campus-toledo.jpeg" alt="" style="width: 100%; height: auto;">
-              </div>-->
-            
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <h3>PQC Group UTFPR</h3>
+            <p>Post Quantum Cryptography Research Group</p>
+            <p>Federal University of Technology - Paraná (UTFPR)<br>
+            Campus Toledo<br>
+            Rua Cristo Rei, 19<br>
+            Toledo - PR, 85902-490, Brazil</p>
+          </div>
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="../index.html#mission">Mission</a></li>
+              <li><a href="../projects.html">Projects</a></li>
+              <li><a href="../group_members.html">Group Members</a></li>
+              <li><a href="../blog.html">Blog & News</a></li>
+              <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-social">
+            <h3>Connect With Us</h3>
+            <div class="social-icons">
+              <a href="https://github.com/PQC-Group-UTFPR" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+              <a href="mailto:pqc-group@utfpr.edu.br" aria-label="Email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
-        
+        <div class="footer-bottom">
+          <p>&copy; 2023 PQC Group UTFPR. All rights reserved.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- end info section -->
-
-  <!-- footer section -->
-  <footer class="footer_section">
-    <div class="container">
-      <p>
-        &copy; <span id="displayYear"></span> Book "Bostorek" Template from 
-        <a href="https://html.design/">Free Html Templates</a>
-      </p>
-    </div>
-  </footer>
-  <!-- footer section -->
-
-  <!-- jQery -->
-  <script src="../js/jquery-3.4.1.min.js"></script>
-  <!-- bootstrap js -->
-  <script src="../js/bootstrap.js"></script>
-  <!-- custom js -->
-  <script src="../js/custom.js"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-  </script>
-  <!-- End Google Map -->
-
-</body>
-
+    <script src="../js/script.js"></script>
+  </body>
 </html>
