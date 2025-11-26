@@ -1,0 +1,75 @@
+name: Build and Deploy with BibInject
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Clone BibInject
+        run: |
+          git clone https://github.com/gabrielzschmitz/BibInject.git tools/BibInject
+
+      - name: Install BibInject
+        run: |
+          cd tools/BibInject
+          ./setup.sh
+
+      - name: Run BibInject
+        run: |
+          cd tools/BibInject
+
+          # Inject Articles
+          ./bibinject.sh \
+            --input ../../publications/articles.bib \
+            --refspec abnt \
+            --html ../../publications.html \
+            --target-id publications_articles \
+            --order desc \
+            ../../publications.html
+
+          # Inject Undergraduate Thesis
+          ./bibinject.sh \
+            --input ../../publications/thesis.bib \
+            --refspec abnt \
+            --html ../../publications.html \
+            --target-id publications_thesis \
+            --order desc \
+            ../../publications.html
+
+      - name: Prepare deployment folder
+        run: |
+          mkdir public
+          shopt -s extglob
+          cp -r !(tools|public) public/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: public/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
