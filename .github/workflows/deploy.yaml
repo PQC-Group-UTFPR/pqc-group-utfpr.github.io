@@ -58,7 +58,7 @@ jobs:
           cp -r !(tools|public) public/
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
         with:
           path: public/
 
