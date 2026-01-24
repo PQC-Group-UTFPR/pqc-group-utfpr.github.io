@@ -1,0 +1,86 @@
+/* Publications Page */
+
+/* Section container */
+.publications-section {
+  background-color: var(--light-bg);
+  padding: 60px 0;
+}
+
+.publications-section h2 {
+  margin-bottom: 40px;
+}
+
+/* Publications layout */
+.publications-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Year headers injected by BibInject */
+.publications-list h2 {
+  font-size: 1.6rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: left;
+  color: var(--secondary-color);
+  padding-left: 12px;
+}
+
+/* Each bibliography entry */
+.publications-list p {
+  background: var(--gray-bg);
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--primary-dark);
+  transition: var(--transition);
+}
+
+/* On hover, show subtle lift */
+.publications-list p:hover {
+  transform: translateY(-3px);
+  background: #fff;
+}
+
+/* Links inside references */
+  color: var(--primary-dark);
+  font-weight: 500;
+}
+
+.publications-list a:hover {
+  color: var(--primary-color);
+}
+
+/* Responsive typography */
+@media (max-width: 576px) {
+  .publications-list p {
+    padding: 14px 16px;
+  }
+
+  .publications-list h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+  }
+}
+
+.doi-link {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 32px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s;
+  color: var(--primary-dark);
+  padding-right: 4px;
+}
+
+.doi-icon {
+  width: 16px;
+  height: 16px;
+  filter: var(--primary-dark-filter);
+}

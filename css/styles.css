@@ -2,6 +2,8 @@
 :root {
   --primary-color: #c9d700;
   --primary-dark: #a8b300;
+  --primary-dark-filter: brightness(0) saturate(100%) invert(72%) sepia(39%)
+    saturate(3749%) hue-rotate(24deg) brightness(94%) contrast(101%);
   --secondary-color: #333;
   --text-color: #333;
   --light-text: #fff;
@@ -9,7 +11,7 @@
   --dark-bg: #001019;
   --gray-bg: #f0f0f0;
   --border-color: #e0e0e0;
-  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   --transition: all 0.3s ease;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --container-width: 1200px;
@@ -79,7 +81,12 @@ img {
   color: var(--light-text);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-bottom: 0.5em;
   line-height: 1.2;
 }
@@ -183,7 +190,7 @@ nav ul li a.active {
 }
 
 nav ul li a.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5px;
   left: 0;
