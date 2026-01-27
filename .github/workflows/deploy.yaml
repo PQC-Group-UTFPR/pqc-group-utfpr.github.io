@@ -58,9 +58,9 @@ jobs:
 
       - name: Prepare deployment folder
         run: |
+          rm -rf public
           mkdir public
-          shopt -s extglob
-          cp -r !(tools|public) public/
+          rsync -av --exclude tools/ --exclude public/ ./ public/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
