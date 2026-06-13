@@ -21,38 +21,6 @@
       href="../images/logo-grupo-pqc-utfpr.svg"
       type="image/svg+xml"
     />
-    <!-- KaTeX for math rendering -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
-      integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP"
-      crossorigin="anonymous"
-    />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
-      integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
-      integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        renderMathInElement(document.body, {
-          delimiters: [
-            { left: "$$", right: "$$", display: true },
-            { left: "$", right: "$", display: true },
-            { left: "\$$", right: "\$$", display: true },
-            { left: "\\[", right: "\\]", display: true },
-          ],
-          throwOnError: false,
-        });
-      });
-    </script>
   </head>
   <body>
     <header>
@@ -90,10 +58,9 @@
           <div class="blog-layout">
             <div class="blog-content">
               <!-- Blog Post 1 -->
-              <article
-                id="2025-cryptography-and-the-quantum-problem"
-                class="blog-post"
-              >
+              <article id="p1-2025" class="blog-post">
+                 <a name="2025-cryptography-and-the-quantum"></a>
+
                 <h2>
                   Cryptography and the Quantum Problem: Why We Need Post-Quantum
                   Cryptography
@@ -134,587 +101,9 @@
                   </p>
 
                   <p>
-                    Let's explore what cryptography is, how it works, and why
+                    Explore what cryptography is, how it works, and why
                     quantum computers could break it &mdash; unless we prepare
-                    now.
-                  </p>
-
-                  <hr />
-
-                  <h3 id="what-is-cryptography">What Is Cryptography?</h3>
-
-                  <p>
-                    <a href="https://en.wikipedia.org/wiki/Cryptography"
-                      >Cryptography</a
-                    >
-                    is the art of protecting information through
-                    <em>mathematical transformations</em>. It ensures that only
-                    the intended recipient can access a message's contents, even
-                    if others intercept it.
-                  </p>
-
-                  <p>There are two major types of cryptography:</p>
-
-                  <ul>
-                    <li>
-                      <strong
-                        ><a
-                          href="https://en.wikipedia.org/wiki/Symmetric-key_algorithm"
-                          >Symmetric cryptography</a
-                        ></strong
-                      >: The same key is used to both encrypt and decrypt the
-                      message.
-                    </li>
-                    <li>
-                      <strong
-                        ><a
-                          href="https://en.wikipedia.org/wiki/Public-key_cryptography"
-                          >Asymmetric cryptography</a
-                        ></strong
-                      >: Uses a pair of keys &mdash; one public, one private.
-                    </li>
-                  </ul>
-
-                  <p>
-                    Cryptography underpins much more than hidden messages. It
-                    enables secure communications, digital signatures, and the
-                    backbone of technologies like <em>blockchain</em>,
-                    <em>e-commerce</em>, and <em>VPNs</em>.
-                  </p>
-
-                  <hr />
-
-                  <h3 id="a-classic-example-caesar-cipher">
-                    A Classic Example: Caesar Cipher
-                  </h3>
-
-                  <p>
-                    One of the simplest and oldest encryption techniques is the
-                    <a href="https://en.wikipedia.org/wiki/Caesar_cipher"
-                      >Caesar cipher</a
-                    >.
-                  </p>
-
-                  <p>
-                    Each letter in a message is <em>shifted</em> by a fixed
-                    number of positions in the alphabet. For example, with a key
-                    <code>k = 3</code>:
-                  </p>
-
-                  <p>
-                    $$\texttt{A} \rightarrow \texttt{D}, \quad \texttt{B}
-                    \rightarrow \texttt{E}, \quad \texttt{C} \rightarrow
-                    \texttt{F}, \quad \ldots$$
-                  </p>
-
-                  <p>
-                    So the message <code>ATTACK</code> becomes
-                    <code>DWWDFN</code>.
-                  </p>
-
-                  <p>
-                    Today, this cipher is trivially breakable &mdash; one only
-                    needs to try all 26 <code>k</code> possibilities. However,
-                    it still serves as a useful introduction to basic encryption
-                    concepts such as:
-                  </p>
-
-                  <ul>
-                    <li>
-                      <strong>Cipher key</strong>, in this case <em>k = 3</em>;
-                    </li>
-                    <li>
-                      <strong>Plaintext</strong> and
-                      <strong>ciphertext</strong>, <em>ATTACK</em> and
-                      <em>DWWDFN</em> respectively.
-                    </li>
-                  </ul>
-
-                  <hr />
-
-                  <h3 id="diffie-hellman">Diffie-Hellman</h3>
-
-                  <p>
-                    While the Caesar cipher illustrates the basics of
-                    encryption, it lacks the security needed for real-world
-                    communication. Modern systems require a way for two people
-                    to establish a shared secret key &mdash; even when
-                    communicating over an insecure channel.
-                  </p>
-
-                  <p>
-                    This raises an important question:<br /><strong
-                      >How can two people agree on a secret if everyone can hear
-                      their conversation?</strong
-                    >
-                  </p>
-
-                  <p>
-                    This is the problem that
-                    <em>Diffie-Hellman key exchange</em> solves. It allows two
-                    parties to create a <em>shared secret</em>, without ever
-                    sending the secret itself.
-                  </p>
-
-                  <p>
-                    Historically, the Diffie-Hellman key exchange is credited to
-                    Whitfield Diffie and Martin Hellman, who published it in
-                    1976. However, Ralph Merkle also contributed key ideas, and
-                    Diffie has since acknowledged him as a co-inventor.
-                  </p>
-
-                  <p>
-                    But, to explain how this works, start with a simple analogy
-                    using <em>colors</em>.
-                  </p>
-
-                  <ul>
-                    <li>
-                      Imagine Alice and Bob want to exchange a secret.
-                      <ul>
-                        <li>
-                          Alice chooses a secret color:
-                          <span style="color: red; font-weight: 700">red</span>.
-                        </li>
-                        <li>
-                          Bob chooses a different secret color:
-                          <span style="color: blue; font-weight: 700">blue</span
-                          >.
-                        </li>
-                        <li>
-                          They agree on a public base color:
-                          <span style="color: gray; font-weight: 700">gray</span
-                          >.
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      Each mixes their secret color with the public one and
-                      sends the result:
-                      <ul>
-                        <li>
-                          Alice sends a mixture of
-                          <span style="color: #c04040; font-weight: 700"
-                            >red + gray</span
-                          >
-                        </li>
-                        <li>
-                          Bob sends a mixture of
-                          <span style="color: #4040c0; font-weight: 700"
-                            >blue + gray</span
-                          >
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      Then, each mixes the received color with their own secret:
-                      <ul>
-                        <li>
-                          Alice mixes
-                          <span style="color: #4040c0; font-weight: 700"
-                            >(blue + gray)</span
-                          >
-                          with
-                          <span style="color: red; font-weight: 700">red</span>
-                        </li>
-                        <li>
-                          Bob mixes
-                          <span style="color: #c04040; font-weight: 700"
-                            >(red + gray)</span
-                          >
-                          with
-                          <span style="color: blue; font-weight: 700"
-                            >blue</span
-                          >
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      The final result is the same shared color &mdash;
-                      <span style="color: #a02060; font-weight: 700"
-                        >a shared secret key</span
-                      >
-                      &mdash; but anyone observing the exchanged colors
-                      can&rsquo;t reconstruct it without knowing the secrets.
-                    </li>
-                  </ul>
-
-                  <div class="post-image">
-                    <img
-                      src="../blog/imgs/cryptography-and-the-quantum-problem/diffie-hellman-as-colors.png"
-                      alt="Diffie-Hellman as Colors"
-                    />
-                    <em
-                      >Diffie-Hellman as Colors Scheme by
-                      <a href="https://gabrielzschmitz.github.io"
-                        >gabrielzschmitz</a
-                      >, licensed under
-                      <a href="https://creativecommons.org/licenses/by/4.0/"
-                        >Creative Commons 4.0 Attribution license</a
-                      >.</em
-                    >
-                  </div>
-
-                  <hr />
-
-                  <h3 id="turning-colors-into-numbers">
-                    Turning Colors into Numbers
-                  </h3>
-
-                  <p>
-                    We'll now translate the color analogy into
-                    <em>mathematical operations</em> &mdash; this is where the
-                    real magic of Diffie-Hellman happens.
-                  </p>
-
-                  <p>
-                    In the previous example, Alice and Bob created a shared
-                    color without ever revealing their secret colors. The same
-                    principle can be achieved with numbers using
-                    <strong>modular arithmetic</strong>, which is like working
-                    on a circular number line &mdash; much like a clock.
-                  </p>
-
-                  <p>For example:</p>
-
-                  <p>$$10 + 5 \equiv 3 \pmod{12}$$</p>
-
-                  <p>
-                    This &ldquo;modulo&rdquo; operator keeps values within a
-                    fixed range, which prevents attackers from deducing secrets
-                    even when partial information is shared.
-                  </p>
-
-                  <hr />
-
-                  <h4 id="how-the-protocol-works">How the Protocol Works</h4>
-
-                  <ol>
-                    <li>
-                      <p><strong>Public parameters</strong> are agreed upon:</p>
-                      <ul>
-                        <li>A base number <code>g</code> (generator)</li>
-                        <li>A large prime number <code>p</code> (modulus)</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <p>
-                        Alice and Bob choose <strong>private numbers</strong>:
-                      </p>
-                      <ul>
-                        <li>Alice chooses a secret number <code>a</code></li>
-                        <li>Bob chooses a secret number <code>b</code></li>
-                      </ul>
-                    </li>
-                    <li>
-                      <p>
-                        They generate <strong>public values</strong> using
-                        modular exponentiation:
-                      </p>
-                    </li>
-                  </ol>
-
-                  <p>$$A = g^a \pmod{p}$$</p>
-                  <p>$$B = g^b \pmod{p}$$</p>
-
-                  <ol start="4">
-                    <li>
-                      <p>
-                        <strong
-                          >They exchange <code>A</code> and
-                          <code>B</code></strong
-                        >
-                        over an open channel.
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        They each compute the <strong>same secret key</strong>:
-                      </p>
-                    </li>
-                  </ol>
-
-                  <p>$$\text{Alice: } K = B^a \pmod p = g^{ba} \pmod p$$</p>
-                  <p>$$\text{Bob: } K = A^b \pmod p = g^{ab} \pmod p$$</p>
-
-                  <p>as:</p>
-
-                  <p>$$g^{ab} = g^{ba}$$</p>
-
-                  <p>
-                    Both parties arrive at the same shared key &mdash; just like
-                    the shared color in the metaphor &mdash; even though their
-                    private values remain hidden.
-                  </p>
-
-                  <hr />
-
-                  <h3 id="security-through-discrete-logarithms">
-                    Security Through Discrete Logarithms
-                  </h3>
-
-                  <p>
-                    Now that we've seen how Alice and Bob generate a shared
-                    secret, let's explore
-                    <em>why an attacker can't just reverse the process</em>.
-                  </p>
-
-                  <p>
-                    Even though the values <code>g</code>, <code>p</code>,
-                    <code>A</code>, and <code>B</code> are publicly visible, the
-                    attacker still doesn't know the private values
-                    <code>a</code> or <code>b</code>.
-                  </p>
-
-                  <p>Why can't they just compute them?</p>
-
-                  <p>
-                    Because doing so would require solving the
-                    <a href="https://en.wikipedia.org/wiki/Discrete_logarithm"
-                      ><strong>discrete logarithm problem</strong></a
-                    >
-                    &mdash; finding <code>a</code> such that:
-                  </p>
-
-                  <p>$$A = g^a \pmod{p}$$</p>
-
-                  <p>
-                    This problem is <em>computationally hard</em> for large
-                    enough values of <code>p</code>. There's no efficient
-                    shortcut to reverse modular exponentiation without knowing
-                    the secret exponent. In fact:
-                  </p>
-
-                  <ul>
-                    <li>
-                      For modern key sizes, it would take longer than the
-                      <em>age of the universe</em> using today's best classical
-                      algorithms.
-                    </li>
-                  </ul>
-
-                  <blockquote>
-                    <p>"Or would it?"</p>
-                  </blockquote>
-
-                  <p>
-                    This is the tipping point where classical security
-                    assumptions fall apart.
-                  </p>
-
-                  <p>Enter quantum computing.</p>
-
-                  <hr />
-
-                  <h3 id="the-quantum-problem">The Quantum Problem</h3>
-
-                  <div class="post-image">
-                    <img
-                      src="../blog/imgs/cryptography-and-the-quantum-problem/computador-quantico.png"
-                      alt="Quantum Computer"
-                      style="height: 500px"
-                    />
-                    <em
-                      ><a
-                        href="https://research.ibm.com/interactive/system-one/"
-                        target="_blank"
-                        >IBM Quantum System from Ehningen, Germany</a
-                      ></em
-                    >
-                  </div>
-
-                  <p>
-                    Quantum computers can solve discrete logarithms
-                    <strong>exponentially faster</strong> than classical ones
-                    using
-                    <a href="https://en.wikipedia.org/wiki/Shor's_algorithm"
-                      ><strong>Shor's Algorithm</strong></a
-                    >.
-                  </p>
-
-                  <p>
-                    That means encryption schemes like <em>RSA</em>,
-                    <em>Diffie-Hellman</em>, and <em>ECC</em> &mdash; the
-                    bedrock of internet security &mdash; could be broken in
-                    minutes by a powerful quantum machine.
-                  </p>
-
-                  <p>
-                    Large-scale quantum computers don't yet exist. But when they
-                    arrive, most of our current cryptographic infrastructure
-                    will become obsolete.
-                  </p>
-
-                  <hr />
-
-                  <h3 id="why-we-need-post-quantum-cryptography">
-                    Why We Need Post-Quantum Cryptography
-                  </h3>
-
-                  <p>
-                    <strong>Post-Quantum Cryptography (PQC)</strong> is about
-                    building encryption systems that resist attacks from quantum
-                    computers.
-                  </p>
-
-                  <p>
-                    Instead of relying on problems like factoring or discrete
-                    logs, PQC is based on:
-                  </p>
-
-                  <ul>
-                    <li><strong>Lattices</strong></li>
-                    <li><strong>Hash-based constructions</strong></li>
-                    <li><strong>Multivariate polynomials</strong></li>
-                    <li><strong>Code-based systems</strong></li>
-                  </ul>
-
-                  <p>These problems remain hard even for quantum machines.</p>
-
-                  <p>
-                    Institutions like
-                    <a
-                      href="https://csrc.nist.gov/Projects/post-quantum-cryptography"
-                      ><strong>NIST</strong></a
-                    >
-                    are already evaluating and standardizing PQC algorithms to
-                    ensure future-proof digital security.
-                  </p>
-
-                  <hr />
-
-                  <h3 id="conclusion">Conclusion</h3>
-
-                  <p>
-                    Cryptography has come a long way &mdash; from Caesar&rsquo;s
-                    ciphers to internet-scale encryption. But a new challenge
-                    looms: the quantum computer.
-                  </p>
-
-                  <p>
-                    If we want to preserve privacy, trust, and security in the
-                    digital age, we must act now to
-                    <strong>transition to post-quantum cryptography</strong>.
-                  </p>
-
-                  <p>
-                    The future isn't just encrypted. It's quantum-resistant.
-                  </p>
-
-                  <hr />
-
-                  <h4 id="further-reading">Further Reading</h4>
-
-                  <ul>
-                    <li>
-                      <p>
-                        <strong>Palomar College (2018)</strong>
-                        <em>"Basic and Historical Cryptography"</em> slide set.
-                        Introduces Caesar cipher as E(p,k) = (p + k) (mod 26).
-                        <a
-                          href="https://www.palomar.edu/math/wp-content/uploads/sites/134/2018/09/Basic-and-Historical-Cryptography.pdf"
-                          >📄 Slide Deck PDF</a
-                        >
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        <strong
-                          >Whitfield Diffie & Martin E. Hellman (1976)</strong
-                        >
-                        <em>"New Directions in Cryptography,"</em> IEEE Trans.
-                        Inf. Theory 22(6): 644–654. Seminal paper introducing
-                        public‐key cryptography and digital signatures.
-                        <a
-                          href="https://ee.stanford.edu/~hellman/publications/24.pdf"
-                          >📄 Read PDF from Stanford</a
-                        >
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        <strong
-                          >Rivest, R. L., A. Shamir & L. Adleman (1978)</strong
-                        >
-                        <em
-                          >"A Method for Obtaining Digital Signatures and
-                          Public-Key Cryptosystems,"</em
-                        >
-                        Commun. ACM 21(2): 120–126. Introduces the RSA algorithm
-                        and shows how to enable secure communication without
-                        prior key sharing.
-                        <a
-                          href="https://people.csail.mit.edu/rivest/Rsapaper.pdf"
-                          >📄 Read PDF from MIT</a
-                        >
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        <strong>Peter W. Shor (1994)</strong>
-                        <em
-                          >"Polynomial-Time Algorithms for Prime Factorization
-                          and Discrete Logarithms on a Quantum Computer."</em
-                        >
-                        Shows that a quantum computer can break RSA and
-                        Diffie–Hellman by factoring and computing discrete logs
-                        in polynomial time.
-                        <a href="https://arxiv.org/pdf/quant-ph/9508027"
-                          >📄 Read on arXiv (quant-ph/9508027)</a
-                        >
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        <strong>Leslie Lamport (1979)</strong>
-                        <em
-                          >"Constructing Digital Signatures from a One-Way
-                          Function."</em
-                        >
-                        First one-time signature scheme based on hash functions
-                        — a precursor to hash-based cryptography.
-                        <a
-                          href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/12/Constructing-Digital-Signatures-from-a-One-Way-Function.pdf"
-                          >📄 SRI Technical Report (CSL-98)</a
-                        >
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        <strong>Oded Regev (2005)</strong>
-                        <em
-                          >"On Lattices, Learning with Errors, Random Linear
-                          Codes, and Cryptography,"</em
-                        >
-                        in Proc. 37th ACM STOC. Introduces the Learning With
-                        Errors (LWE) problem and a quantum-resistant public-key
-                        encryption scheme.
-                        <a href="https://cims.nyu.edu/~regev/papers/qcrypto.pdf"
-                          >📄 Read PDF from STOC (2005)</a
-                        >
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        <strong>Dam, D.-T. et al. (2023)</strong>
-                        <em
-                          >"A Survey of Post-Quantum Cryptography: Start of a
-                          New Race,"</em
-                        >
-                        Cryptography 2023, 7(3): 40. An accessible and
-                        up-to-date survey of PQC approaches, NIST candidates,
-                        and research directions.
-                        <a href="https://www.mdpi.com/2410-387X/7/3/40"
-                          >📄 Open-access MDPI paper</a
-                        >
-                      </p>
-                    </li>
-                  </ul>
-
-                  <hr />
-
-                  <p>
-                    You can read the original blog post at:
+                    now. Check the content at:
                     <a
                       href="https://gabrielzschmitz.github.io/blog/posts/cryptography-and-the-quantum-problem/post/"
                       >gabrielzschmitz.github.io</a
@@ -723,10 +112,11 @@
                 </div>
               </article>
 
-              <div class="post-divider"></div>
+              <div class="post-divider" ></div>
 
               <!-- Blog Post 2 -->
-              <article id="2024-hybrid-in-java-part-1" class="blog-post">
+              <article id="p2-2024" class="blog-post">
+		 <a name="2024-hybrid-in-java-part-1"></a>
                 <h2>Hybrid PQC in Java: Common Pitfalls (Part 1)</h2>
                 <div class="post-meta">
                   <span class="post-date">August 9, 2024</span>
@@ -752,11 +142,9 @@
                 <div class="post-content">
                   <p>
                     As part of a collaboration project with
-                    <b><a href="https://www.czertainly.com/">CZERTAINLY</a></b
-                    >, I've started a Java
+                    <b><a href="https://www.czertainly.com/">CZERTAINLY</a></b>, I've started a Java
                     <a href="https://github.com/PQC-Group-UTFPR/hybrid-pqc-bc"
-                      >repository</a
-                    >
+                      >repository</a>
                     to experiment hybrid PQC. Together with
                     <a
                       href="https://www.linkedin.com/in/andrei-filipim-esteves-373667322/"
@@ -1151,10 +539,10 @@
                 </div>
               </article>
 
-              <div class="post-divider"></div>
+              <div class="post-divider" ></div>
 
               <!-- Blog Post 3 -->
-              <article id="2024-first-post" class="blog-post">
+              <article id="p1-2024" class="blog-post">
                 <h2>Group's First Anniversary</h2>
                 <div class="post-meta">
                   <span class="post-date">July 30, 2024</span>
@@ -1189,9 +577,7 @@
                       <a href="https://www.czertainly.com/">CZERTAINLY</a>
                     </li>
                     <li>
-                      <a href="https://www.dinamonetworks.com/"
-                        >Dinamo Networks</a
-                      >
+                      <a href="https://www.dinamonetworks.com/">Dinamo Networks</a>
                     </li>
                   </ul>
 
@@ -1211,30 +597,20 @@
                 <h3>Blog Posts</h3>
                 <ul class="sidebar-nav">
                   <li>
-                    <a
-                      href="#2025-cryptography-and-the-quantum-problem"
-                      class="sidebar-link"
-                    >
-                      <span class="sidebar-link-text"
-                        >Cryptography and the Quantum Problem: Why We Need
-                        Post-Quantum Cryptography</span
-                      >
+                    <a href="#p1-2025" class="sidebar-link" >
+                      <span class="sidebar-link-text">Cryptography and the Quantum Problem: Why We Need Post-Quantum Cryptography</span>
                       <span class="sidebar-link-date">May 1, 2025</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#2024-hybrid-in-java-part-1" class="sidebar-link">
-                      <span class="sidebar-link-text"
-                        >Hybrid PQC in Java: Common Pitfalls (Part 1)</span
-                      >
+                    <a href="#p2-2024" class="sidebar-link">
+                      <span class="sidebar-link-text" >Hybrid PQC in Java: Common Pitfalls (Part 1)</span>
                       <span class="sidebar-link-date">Aug 9, 2024</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#2024-first-post" class="sidebar-link">
-                      <span class="sidebar-link-text"
-                        >Group's First Anniversary</span
-                      >
+                    <a href="#p1-2024" class="sidebar-link">
+                      <span class="sidebar-link-text">Group's First Anniversary</span>
                       <span class="sidebar-link-date">Jul 30, 2024</span>
                     </a>
                   </li>
@@ -1319,3 +695,5 @@
     <script src="../js/script.js"></script>
   </body>
 </html>
+
+	
